@@ -1,42 +1,83 @@
-
+/* 基础 */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  transition: background 0.3s, color 0.3s;
 }
 header, footer {
-    text-align: center;
-    padding: 1rem;
+  text-align: center;
+  padding: 1rem;
 }
 nav {
-    margin: 1rem 0;
+  margin: 1rem 0;
 }
 nav a {
-    margin: 0 10px;
-    text-decoration: none;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: bold;
 }
 .section {
-    margin: 2rem;
-    padding: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 8px;
+  margin: 2rem;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
 }
+.theme-switcher button,
+.language-switcher button {
+  margin: 0 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+/* 主题：Light */
 .theme-light {
-    background: #f7f8fc;
-    color: #000;
+  background: #f7f8fc;
+  color: #000;
 }
+.theme-light nav a,
+.theme-light .theme-switcher button,
+.theme-light .language-switcher button {
+  color: #0056d2;
+  border: 1px solid #0056d2;
+  background: transparent;
+}
+
+/* 主题：Dark */
 .theme-dark {
-    background: #121212;
-    color: #eee;
+  background: #121212;
+  color: #eee;
 }
+.theme-dark nav a,
+.theme-dark .theme-switcher button,
+.theme-dark .language-switcher button {
+  color: #66d9ef;
+  border: 1px solid #66d9ef;
+  background: transparent;
+}
+
+/* 主题：Galaxy */
 .theme-galaxy {
-    background: radial-gradient(circle at 20% 30%, #1a2a6c, #b21f1f, #fdbb2d);
-    color: #fff;
+  background: radial-gradient(circle at 20% 30%, #1a2a6c, #b21f1f, #fdbb2d);
+  color: #fff;
 }
+.theme-galaxy nav a,
+.theme-galaxy .theme-switcher button,
+.theme-galaxy .language-switcher button {
+  color: #ffe066;
+  border: 1px solid #ffe066;
+  background: transparent;
+}
+
+/* 主题：Cyberpunk */
 .theme-cyberpunk {
-    background: linear-gradient(to right, #3f0d12, #a71d31);
-    color: #fff;
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  color: #fff;
 }
-.theme-cyberpunk nav a {
-    color: #0ff;
+.theme-cyberpunk nav a,
+.theme-cyberpunk .theme-switcher button,
+.theme-cyberpunk .language-switcher button {
+  color: #ff49db;
+  border: 1px solid #ff49db;
+  background: transparent;
 }
