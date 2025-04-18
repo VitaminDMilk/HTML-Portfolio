@@ -1,4 +1,4 @@
-/* ============ 共用基础 ============ */
+/* —— 基础不变 —— */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
   font-family: 'Inter', sans-serif;
@@ -12,41 +12,37 @@ canvas#bgcanvas {
   width: 100%; height: 100%; z-index: -1;
 }
 header, footer { text-align: center; padding: 1rem; }
-h1 { font-weight: 700; font-size: 2rem; margin-bottom: 0.2rem; }
-p#tagline { font-weight: 400; color: inherit; margin-bottom: 0.8rem; }
-nav { margin-bottom: 0.8rem; }
+h1 { font-weight: 700; font-size: 2rem; margin-bottom: .2rem; }
+p#tagline { font-weight: 400; margin-bottom: .8rem; }
+nav { margin-bottom: .8rem; }
 nav a {
-  margin: 0 0.5rem; text-decoration: none;
-  font-weight: 600; padding: 0.3rem 0.5rem;
-  border-radius: 4px; transition: background 0.3s;
+  margin: 0 .5rem; text-decoration: none;
+  font-weight: 600; padding: .3rem .6rem;
+  border-radius: 4px; transition: background .3s;
 }
 nav a:hover { background: rgba(255,255,255,0.2); }
-
 .theme-switcher, .language-switcher {
-  margin-bottom: 0.8rem;
+  margin-bottom: .8rem;
 }
 .theme-switcher button,
 .language-switcher button {
   margin: 0 4px; padding: 6px 10px;
   border: none; border-radius: 4px; cursor: pointer;
-  transition: transform 0.2s;
+  transition: transform .2s;
 }
 .theme-switcher button:hover,
 .language-switcher button:hover {
   transform: scale(1.1);
 }
-
-/* 卡片式居中布局 */
-main { max-width: 800px; margin: 0 auto; padding: 1rem 0; }
+main {
+  max-width: 800px; margin: 0 auto; padding: 1rem 0;
+}
 .section {
-  background: rgba(255,255,255,0.8);
+  backdrop-filter: blur(6px);
   border-radius: 8px; margin-bottom: 1.5rem;
   padding: 1.5rem; text-align: center;
-  backdrop-filter: blur(6px);
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
-
-/* 标题下划线 */
 .section h2 {
   margin-bottom: 1rem;
   font-size: 1.5rem; font-weight: 600;
@@ -59,7 +55,7 @@ main { max-width: 800px; margin: 0 auto; padding: 1rem 0; }
   margin: 8px auto 16px;
 }
 
-/* ============ 主题：Day Mode ============ */
+/* —— 1. Day 模式 —— */
 .theme-day {
   background: #eef2f7; color: #334;
 }
@@ -72,20 +68,7 @@ main { max-width: 800px; margin: 0 auto; padding: 1rem 0; }
   background: rgba(255,255,255,0.8); color: #334;
 }
 
-/* 轻盈飘浮气泡 */
-@keyframes bubble {
-  0%   { transform: translateY(0) scale(1); opacity: 0.6; }
-  50%  { opacity: 0.3; }
-  100% { transform: translateY(-200px) scale(1.4); opacity: 0; }
-}
-.theme-day canvas#bgcanvas {
-  background: none;
-}
-.theme-day canvas#bgcanvas.bubbles {
-  animation: none;
-}
-
-/* ============ 主题：Night Mode ============ */
+/* —— 2. Night 模式 —— */
 .theme-night {
   background: #090b13; color: #ccc;
 }
@@ -98,53 +81,43 @@ main { max-width: 800px; margin: 0 auto; padding: 1rem 0; }
   background: rgba(20,20,30,0.6); color: #ddd;
 }
 
-/* 夜空星点（Canvas 实现） */
-
-/* ============ 主题：Galaxy ============ */
+/* —— 3. Galaxy → 改成蓝色系 —— */
 .theme-galaxy {
-  background: #000; color: #fff;
+  background: linear-gradient(135deg, #001f3f, #005f99);
+  color: #fff;
 }
-.theme-galaxy nav a { background: rgba(255,255,255,0.1); color: #ffd700; }
+.theme-galaxy nav a {
+  background: rgba(255,255,255,0.1);
+  color: #7FDBFF;
+}
 .theme-galaxy .theme-switcher button,
 .theme-galaxy .language-switcher button {
-  background: rgba(255,255,255,0.2); color: #ffd700;
+  background: rgba(255,255,255,0.2);
+  color: #7FDBFF;
 }
 .theme-galaxy .section {
-  background: rgba(10,10,30,0.6); color: #fff;
+  background: rgba(0,40,80,0.6);
+  color: #fff;
 }
+/* 纯用脚本画布，无 CSS 动画 */
+.theme-galaxy canvas#bgcanvas { background: none; }
 
-/* 缓慢漂移星云 */
-@keyframes nebula {
-  from { background-position: 0 0; }
-  to   { background-position: 1000px 800px; }
-}
-.theme-galaxy canvas#bgcanvas {
-  background: url('https://assets.codepen.io/123456/nebula.jpg') center/cover no-repeat;
-  animation: nebula 60s linear infinite;
-}
-
-/* ============ 主题：Cyberpunk ============ */
+/* —— 4. Cyberpunk → 改成淡粉色 —— */
 .theme-cyberpunk {
-  background: #0f1a2a; color: #fff;
+  background: linear-gradient(135deg, #ffe4e1, #ff9ca3);
+  color: #333;
 }
-.theme-cyberpunk nav a { background: rgba(0,0,0,0.5); color: #ff49db; }
+.theme-cyberpunk nav a {
+  background: rgba(255,255,255,0.5);
+  color: #d6336c;
+}
 .theme-cyberpunk .theme-switcher button,
 .theme-cyberpunk .language-switcher button {
-  background: rgba(0,0,0,0.7); color: #ff49db;
+  background: rgba(255,255,255,0.7);
+  color: #d6336c;
 }
 .theme-cyberpunk .section {
-  background: rgba(0,0,0,0.6); color: #fff;
+  background: rgba(255,255,255,0.8);
+  color: #333;
 }
-
-/* 霓虹光栅动画 */
-@keyframes cyberGrid {
-  0% { background-position: 0 0; }
-  100% { background-position: 100px 100px; }
-}
-.theme-cyberpunk canvas#bgcanvas {
-  background: 
-    linear-gradient(90deg, rgba(255,73,219,0.15) 1px, transparent 1px) repeat,
-    linear-gradient(0deg, rgba(255,73,219,0.15) 1px, transparent 1px) repeat;
-  background-size: 50px 50px;
-  animation: cyberGrid 5s linear infinite;
-}
+.theme-cyberpunk canvas#bgcanvas { background: none; }
