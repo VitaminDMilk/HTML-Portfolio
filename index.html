@@ -5,41 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Wei (David) Dai - Portfolio</title>
   <link rel="stylesheet" href="style.css" />
-  <!-- ScrollReveal CDN -->
   <script src="https://unpkg.com/scrollreveal"></script>
-  <!-- tsparticles CDN 用于粒子背景 -->
   <script src="https://cdn.jsdelivr.net/npm/tsparticles@3/tsparticles.bundle.min.js"></script>
 </head>
 
 <body class="theme-light">
-  <!-- 背景粒子容器 -->
   <div id="tsparticles"></div>
-
-  <!-- ===== HEADER ===== -->
   <header>
     <div class="container">
-      <h1 id="name">Wei (David) Dai</h1>
-      <p id="tagline">Aspiring Embedded & AI Engineer</p>
+      <h1 id="name">Wei (David) Dai</h1>
+      <p id="tagline">Aspiring Embedded & AI Engineer</p>
 
-      <!-- ===== NAV ===== -->
       <nav id="nav">
         <a href="#education" data-en="Education" data-zh="教育">Education</a>
-        <a href="#skills"    data-en="Skills"    data-zh="技能">Skills</a>
-        <a href="#exp"       data-en="Experience"data-zh="经历">Experience</a>
-        <a href="#projects"  data-en="Projects"  data-zh="项目">Projects</a>
-        <a href="#activities"data-en="Activities"data-zh="活动">Activities</a>
-        <a href="resume.pdf" class="btn" data-en="Download Resume" data-zh="下载简历">Download Resume</a>
+        <a href="#skills" data-en="Skills" data-zh="技能">Skills</a>
+        <a href="#exp" data-en="Experience" data-zh="经历">Experience</a>
+        <a href="#projects" data-en="Projects" data-zh="项目">Projects</a>
+        <a href="#activities" data-en="Activities" data-zh="活动">Activities</a>
+        <a href="resume.pdf" class="btn" data-en="Download Resume" data-zh="下载简历">Download Resume</a>
       </nav>
 
-      <!-- 主题切换 -->
       <div class="switchers">
-        <span class="theme-btn" title="Light"      onclick="setTheme('light')">☀️</span>
-        <span class="theme-btn" title="Dark"       onclick="setTheme('dark')">🌑</span>
-        <span class="theme-btn" title="Galaxy"     onclick="setTheme('galaxy')">🌌</span>
-        <span class="theme-btn" title="Cyberpunk"  onclick="setTheme('cyber')">🟣</span>
+        <span class="theme-btn" title="Light" onclick="setTheme('light')">☀️</span>
+        <span class="theme-btn" title="Dark" onclick="setTheme('dark')">🌑</span>
+        <span class="theme-btn" title="Galaxy" onclick="setTheme('galaxy')">🌌</span>
+        <span class="theme-btn" title="Cyberpunk" onclick="setTheme('cyber')">🟣</span>
       </div>
 
-      <!-- 语言切换 -->
       <div class="lang-toggle">
         <button onclick="setLang('en')" id="btn-en">EN</button> /
         <button onclick="setLang('zh')" id="btn-zh">中</button>
@@ -47,89 +39,71 @@
     </div>
   </header>
 
-  <!-- ===== MAIN ===== -->
   <main class="container">
-
-    <!-- Education -->
     <section id="education" class="reveal">
       <h2 data-en="Education" data-zh="教育">Education</h2>
-
       <div class="card">
-        <h3>Purdue University Fort Wayne <span>Aug 2023 – May 2027</span></h3>
-        <p>Major: Computer Engineering · Minor: Computer Science · GPA 3.65/4.0 · Dean’s List & Honors</p>
+        <h3>Purdue University Fort Wayne <span>Aug 2023 – May 2027</span></h3>
+        <p>Major: Computer Engineering · Minor: Computer Science · GPA 3.65/4.0 · Dean’s List & Honors</p>
       </div>
-
       <div class="card">
-        <h3>Wyoming Seminary Prep School <span>Aug 2020 – May 2023</span></h3>
-        <p>High School Diploma · GPA 3.65/4.0</p>
+        <h3>Wyoming Seminary Prep School <span>Aug 2020 – May 2023</span></h3>
+        <p>High School Diploma · GPA 3.65/4.0</p>
       </div>
     </section>
 
-    <!-- Skills -->
     <section id="skills" class="reveal">
       <h2 data-en="Skills" data-zh="技能">Skills</h2>
       <div class="card">
-        <p><strong>Programming:</strong> Java · Python · C++ · JavaFX · SceneBuilder · HTML/CSS</p>
-        <p><strong>Tools:</strong> Unity · AutoCAD · MATLAB · Arduino</p>
-        <p><strong>Languages:</strong> Chinese (Native) · English (TOEFL 101) · Spanish (Intermediate)</p>
+        <p><strong>Programming:</strong> Java, Python, C++, JavaFX, SceneBuilder, HTML, CSS</p>
+        <p><strong>Tools:</strong> Unity, AutoCAD, MATLAB, Arduino</p>
+        <p><strong>Languages:</strong> Chinese (Native), English (TOEFL 101), Spanish (Intermediate)</p>
       </div>
     </section>
 
-    <!-- Experience -->
     <section id="exp" class="reveal">
-      <h2 data-en="Internships & Work Experience" data-zh="实习与工作经历">Internships & Work Experience</h2>
-
+      <h2 data-en="Internships & Work Experience" data-zh="实习与工作经历">Internships & Work Experience</h2>
       <div class="card">
-        <h3>Utopilot Internship – SAIC <span>Summer 2024</span></h3>
-        <p>Worked on perception for autonomous vehicles · Point‑cloud & OCC visual conversion.</p>
+        <h3>Utopilot Internship – SAIC <span>Summer 2024</span></h3>
+        <p>Worked on perception for autonomous vehicles · Point-cloud & OCC visual conversion.</p>
       </div>
-
       <div class="card">
-        <h3>IT Helpdesk – Purdue Fort Wayne <span>2024 – 2025</span></h3>
-        <p>Front‑line tech support · Managed loaner laptops · Troubleshooting & escalation.</p>
+        <h3>IT Helpdesk – Purdue Fort Wayne <span>2024 – 2025</span></h3>
+        <p>Front-line tech support · Managed loaner laptops · Troubleshooting & escalation.</p>
       </div>
     </section>
 
-    <!-- Projects -->
     <section id="projects" class="reveal">
       <h2 data-en="Projects" data-zh="项目">Projects</h2>
-
       <div class="card">
-        <h3>Black Jack Simulator</h3>
-        <p>JavaFX GUI Blackjack game featuring OOP, UML, event‑driven logic, custom styling.</p>
+        <h3>Black Jack Simulator</h3>
+        <p>JavaFX GUI Blackjack game featuring OOP, UML, event-driven logic, custom styling.</p>
       </div>
-
       <div class="card">
-        <h3>Auto Loan Calculator</h3>
-        <p>JavaFX app computing monthly payments from price, tax, down‑payment, options.</p>
+        <h3>Auto Loan Calculator</h3>
+        <p>JavaFX app computing monthly payments from price, tax, down-payment, options.</p>
       </div>
-
       <div class="card">
         <h3>Bank Simulator</h3>
         <p>Console Java app handling deposits, withdrawals, transfers with robust validation.</p>
       </div>
     </section>
 
-    <!-- Activities -->
     <section id="activities" class="reveal">
-      <h2 data-en="Activities & Competitions" data-zh="活动与竞赛">Activities & Competitions</h2>
+      <h2 data-en="Activities & Competitions" data-zh="活动与竞赛">Activities & Competitions</h2>
       <ul>
-        <li><strong>IEEE Xtreme 2023‑2024:</strong> Team lead · Top 50 US</li>
-        <li><strong>National Cyber League 2023‑2024:</strong> Collegiate cybersecurity contest</li>
-        <li><strong>Global Game Jam 2024:</strong> 48‑hour game dev marathon</li>
-        <li><strong>Community Service 2018‑21:</strong> Basketball coach for special‑needs children, Karachi</li>
-        <li><strong>Varsity Cross‑Country & Swim 2021‑23:</strong> Weekly meets · District finalist</li>
+        <li><strong>IEEE Xtreme 2023–2024:</strong> Team lead · Top 50 US</li>
+        <li><strong>National Cyber League 2023–2024:</strong> Collegiate cybersecurity contest</li>
+        <li><strong>Global Game Jam 2024:</strong> 48-hour game dev marathon</li>
+        <li><strong>Community Service 2018–21:</strong> Basketball coach for special-needs children, Karachi</li>
+        <li><strong>Varsity Cross-Country & Swim 2021–23:</strong> Weekly meets · District finalist</li>
       </ul>
     </section>
-
   </main>
 
-  <!-- ===== FOOTER ===== -->
-  <footer><div class="container">© 2025 Wei Dai</div></footer>
+  <footer><div class="container">© 2025 Wei Dai</div></footer>
 
-  <!-- ===== JS ===== -->
   <script>
-    /** ---------- 语言切换 ---------- **/
     function setLang(lang){
       document.querySelectorAll('[data-en]').forEach(el=>{
         el.textContent = el.getAttribute(lang==='en'?'data-en':'data-zh');
@@ -138,19 +112,17 @@
       document.getElementById('btn-zh').classList.toggle('active',lang==='zh');
     }
 
-    /** ---------- 主题切换 + 粒子背景 ---------- **/
     const tsparticlesCfg = {
-      light:  {color:'#000',links:'#000',bg:false},
-      dark:   {color:'#fff',links:'#fff',bg:false},
+      light:  {color:'#aaa',links:'#aaa',bg:true},
+      dark:   {color:'#fff',links:'#fff',bg:true},
       galaxy: {color:'#6cf',links:'#6cf',bg:true},
       cyber:  {color:'#f0f',links:'#f0f',bg:true}
     };
 
     async function initParticles(theme){
-      if(!tsparticles) return;
       const cfg = tsparticlesCfg[theme];
       if(!cfg) return;
-      await tsparticles.load('tsparticles', cfg.bg ? {
+      await tsparticles.load('tsparticles', {
         background:{color:{value:'transparent'}},
         particles:{
           number:{value:60},
@@ -159,21 +131,17 @@
           move:{enable:true,speed:0.7},
           size:{value:{min:1,max:3}}
         },
-        fullScreen:{enable:false,zIndex:-1}
-      } : {particles:{number:{value:0}},fullScreen:{enable:false}});
+        fullScreen:{enable:false}
+      });
     }
 
     async function setTheme(theme){
-      document.body.className = 'theme-'+theme;
+      document.body.className = 'theme-' + theme;
       await initParticles(theme);
     }
 
-    /** ---------- ScrollReveal ---------- **/
     ScrollReveal().reveal('.reveal',{distance:'40px',duration:900,easing:'ease-out',origin:'bottom',reset:false});
-
-    /* 初始语言 / 主题 */
-    setLang('en');
-    initParticles('light');
+    setLang('en'); setTheme('light');
   </script>
 </body>
 </html>
