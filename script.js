@@ -42,9 +42,17 @@ function setLanguage(lang) {
     document.getElementById("footer-name").textContent = content[lang].name;
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+    ScrollReveal().reveal('.reveal', {
+        distance: '40px',
+        duration: 1000,
+        easing: 'ease-in-out',
+        origin: 'bottom',
+        interval: 200
+    });
+});
+
 window.onload = function () {
     setLanguage('en');
     setTheme('galaxy');
 };
-
-ScrollReveal().reveal('.reveal', { distance: '40px', duration: 1000, easing: 'ease-in-out', origin: 'bottom', interval: 200 });
