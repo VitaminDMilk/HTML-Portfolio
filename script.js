@@ -1,6 +1,9 @@
-// 语言 & 文本内容
+// 全部内容
 const content = {
   en: {
+    name:       "Wei (David) Dai",
+    tagline:    "Aspiring Embedded & AI Engineer",
+    footerName: "Wei Dai",
     nav: {
       education: "Education",
       skills:    "Skills",
@@ -9,18 +12,15 @@ const content = {
       activities:"Activities",
       download:  "Download Resume"
     },
-    name:    "Wei (David) Dai",
-    tagline: "Aspiring Embedded & AI Engineer",
-    footerName: "Wei Dai",
     education: `
       <h2>Education</h2>
       <div>
         <strong>Purdue University Fort Wayne 2023‑08 – 2027‑05</strong>
-        <p>Major: Computer Engineering · Minor: Computer Science · GPA 3.65/4.0 · Dean’s List & Honors</p>
+        <p>Major: Computer Engineering · Minor: Computer Science · GPA 3.65/4.0 · Dean’s List & Honors</p>
       </div>
       <div>
         <strong>Wyoming Seminary Prep School 2020‑08 – 2023‑05</strong>
-        <p>High School Diploma · GPA 3.65/4.0</p>
+        <p>High School Diploma · GPA 3.65/4.0</p>
       </div>
     `,
     skills: `
@@ -32,7 +32,7 @@ const content = {
       </p>
     `,
     experience: `
-      <h2>Internships & Work Experience</h2>
+      <h2>Internships & Work Experience</h2>
       <div>
         <strong>Utopilot Internship – SAIC Summer 2024</strong>
         <p>Worked on perception for autonomous vehicles · Point‑cloud & OCC visual conversion.</p>
@@ -48,11 +48,19 @@ const content = {
         <strong>Black Jack Simulator</strong>
         <p>JavaFX GUI Blackjack game featuring OOP, UML, event‑driven logic, custom styling.</p>
       </div>
+      <div>
+        <strong>Auto Loan Calculator</strong>
+        <p>JavaFX GUI app to compute loan payments based on price, tax rate, and financing details.</p>
+      </div>
+      <div>
+        <strong>Bank Simulator</strong>
+        <p>Console‑based Java app for checking balances, deposits, and loan requests.</p>
+      </div>
     `,
     activities: `
-      <h2>Activities & Competitions</h2>
+      <h2>Activities & Competitions</h2>
       <ul>
-        <li>IEEE Xtreme 2023–2024: Team leader, placed Top 50</li>
+        <li>IEEE Xtreme 2023–2024: Team leader; placed Top 50</li>
         <li>National Cyber League 2023–2024</li>
         <li>Global Game Jam 2024</li>
         <li>Community Service 2018–2021</li>
@@ -61,6 +69,9 @@ const content = {
     `
   },
   zh: {
+    name:       "戴维",
+    tagline:    "嵌入式与人工智能工程师",
+    footerName: "戴维",
     nav: {
       education: "教育",
       skills:    "技能",
@@ -69,9 +80,6 @@ const content = {
       activities:"活动与竞赛",
       download:  "下载简历"
     },
-    name:    "戴维",
-    tagline: "嵌入式与人工智能工程师",
-    footerName: "戴维",
     education: `
       <h2>教育</h2>
       <div>
@@ -108,13 +116,21 @@ const content = {
         <strong>二十一点游戏模拟器</strong>
         <p>使用 JavaFX 构建的图形界面游戏，应用 OOP、UML、事件驱动逻辑。</p>
       </div>
+      <div>
+        <strong>汽车贷款计算器</strong>
+        <p>JavaFX GUI 应用，根据车辆价格、税率和融资细节计算月供。</p>
+      </div>
+      <div>
+        <strong>银行模拟器</strong>
+        <p>基于控制台的 Java 应用，支持余额查询、存款、贷款申请。</p>
+      </div>
     `,
     activities: `
       <h2>活动与竞赛</h2>
       <ul>
         <li>IEEE Xtreme 编程竞赛 2023–2024</li>
         <li>全国网络联盟赛 2023–2024</li>
-        <li>Global Game Jam 2024</li>
+        <li>全球游戏创作节 2024</li>
         <li>社区志愿服务 2018–2021</li>
         <li>越野与游泳校队 2021–2023</li>
       </ul>
@@ -122,44 +138,53 @@ const content = {
   }
 };
 
-// 切换主题
 function setTheme(theme) {
   document.body.className = 'theme-' + theme;
+  initBackground(theme);
 }
 
-// 切换语言
 function setLanguage(lang) {
   const cfg = content[lang];
-  // 头部
-  document.getElementById('name').textContent = cfg.name;
-  document.getElementById('tagline').textContent = cfg.tagline;
-  // 导航
+  document.getElementById('name').textContent       = cfg.name;
+  document.getElementById('tagline').textContent    = cfg.tagline;
+  document.getElementById('footer-name').textContent= cfg.footerName;
+  document.getElementById('download').textContent   = cfg.nav.download;
   document.querySelectorAll('.nav-link').forEach(el => {
     const key = el.getAttribute('data-key');
     el.textContent = cfg.nav[key];
   });
-  document.getElementById('download').textContent = cfg.nav.download;
-  // 底部
-  document.getElementById('footer-name').textContent = cfg.footerName;
-  // 各区块
-  document.getElementById('education').innerHTML  = cfg.education;
-  document.getElementById('skills').innerHTML     = cfg.skills;
-  document.getElementById('experience').innerHTML = cfg.experience;
-  document.getElementById('projects').innerHTML   = cfg.projects;
-  document.getElementById('activities').innerHTML = cfg.activities;
+  document.getElementById('education').innerHTML   = cfg.education;
+  document.getElementById('skills').innerHTML      = cfg.skills;
+  document.getElementById('experience').innerHTML  = cfg.experience;
+  document.getElementById('projects').innerHTML    = cfg.projects;
+  document.getElementById('activities').innerHTML  = cfg.activities;
 }
 
-// DOM 准备好后初始化
-document.addEventListener('DOMContentLoaded', function() {
-  // 默认语言、主题
+// 背景特效初始化
+function initBackground(theme) {
+  const canvas = document.getElementById('bgcanvas');
+  const ctx = canvas.getContext('2d');
+  canvas.width = innerWidth; canvas.height = innerHeight;
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+
+  if (theme === 'night') {
+    // 画星星
+    for (let i=0; i<200; i++) {
+      ctx.fillStyle = 'rgba(255,255,255,' + Math.random() + ')';
+      ctx.beginPath();
+      ctx.arc(Math.random()*canvas.width, Math.random()*canvas.height, Math.random()*1.5, 0, 2*Math.PI);
+      ctx.fill();
+    }
+  }
+  // 其它主题让 CSS 处理背景动画
+}
+
+document.addEventListener('DOMContentLoaded', () => {
   setLanguage('en');
-  setTheme('light');
-  // ScrollReveal 动画
+  setTheme('day');
   ScrollReveal().reveal('.reveal', {
-    distance: '40px',
-    duration: 1000,
-    easing: 'ease-in-out',
-    origin: 'bottom',
+    distance: '40px', duration: 1000,
+    easing: 'ease-in-out', origin: 'bottom',
     interval: 200
   });
 });
