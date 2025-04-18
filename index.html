@@ -8,140 +8,56 @@
   <script src="https://unpkg.com/scrollreveal"></script>
   <script src="https://cdn.jsdelivr.net/npm/tsparticles@3/tsparticles.bundle.min.js"></script>
 </head>
-
 <body class="theme-light">
   <div id="tsparticles"></div>
   <header>
     <div class="container">
       <h1 id="name">Wei (David) Dai</h1>
       <p id="tagline">Aspiring Embedded & AI Engineer</p>
-
-      <nav id="nav">
-        <a href="#education" data-en="Education" data-zh="教育">Education</a>
-        <a href="#skills" data-en="Skills" data-zh="技能">Skills</a>
-        <a href="#exp" data-en="Experience" data-zh="经历">Experience</a>
-        <a href="#projects" data-en="Projects" data-zh="项目">Projects</a>
-        <a href="#activities" data-en="Activities" data-zh="活动">Activities</a>
-        <a href="resume.pdf" class="btn" data-en="Download Resume" data-zh="下载简历">Download Resume</a>
+      <nav>
+        <a href="#education" class="nav-link">Education</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#activities" class="nav-link">Activities</a>
+        <a href="resume.pdf" download class="nav-link">Download Resume</a>
       </nav>
-
       <div class="switchers">
-        <span class="theme-btn" title="Light" onclick="setTheme('light')">☀️</span>
-        <span class="theme-btn" title="Dark" onclick="setTheme('dark')">🌑</span>
-        <span class="theme-btn" title="Galaxy" onclick="setTheme('galaxy')">🌌</span>
-        <span class="theme-btn" title="Cyberpunk" onclick="setTheme('cyber')">🟣</span>
+        <span class="theme-btn" data-theme="light">🟡</span>
+        <span class="theme-btn" data-theme="dark">🌑</span>
+        <span class="theme-btn" data-theme="galaxy">🪐</span>
+        <span class="theme-btn" data-theme="cyberpunk">🟣</span>
       </div>
-
       <div class="lang-toggle">
-        <button onclick="setLang('en')" id="btn-en">EN</button> /
-        <button onclick="setLang('zh')" id="btn-zh">中</button>
+        <button id="en" class="active">EN</button> / <button id="zh">中</button>
       </div>
     </div>
   </header>
-
   <main class="container">
-    <section id="education" class="reveal">
-      <h2 data-en="Education" data-zh="教育">Education</h2>
+    <section id="education" class="reveal-section">
+      <h2>Education</h2>
       <div class="card">
-        <h3>Purdue University Fort Wayne <span>Aug 2023 – May 2027</span></h3>
+        <strong>Purdue University Fort Wayne Aug 2023 – May 2027</strong>
         <p>Major: Computer Engineering · Minor: Computer Science · GPA 3.65/4.0 · Dean’s List & Honors</p>
       </div>
       <div class="card">
-        <h3>Wyoming Seminary Prep School <span>Aug 2020 – May 2023</span></h3>
+        <strong>Wyoming Seminary Prep School Aug 2020 – May 2023</strong>
         <p>High School Diploma · GPA 3.65/4.0</p>
       </div>
     </section>
-
-    <section id="skills" class="reveal">
-      <h2 data-en="Skills" data-zh="技能">Skills</h2>
+    <section id="skills" class="reveal-section">
+      <h2>Skills</h2>
       <div class="card">
         <p><strong>Programming:</strong> Java, Python, C++, JavaFX, SceneBuilder, HTML, CSS</p>
         <p><strong>Tools:</strong> Unity, AutoCAD, MATLAB, Arduino</p>
         <p><strong>Languages:</strong> Chinese (Native), English (TOEFL 101), Spanish (Intermediate)</p>
       </div>
     </section>
-
-    <section id="exp" class="reveal">
-      <h2 data-en="Internships & Work Experience" data-zh="实习与工作经历">Internships & Work Experience</h2>
-      <div class="card">
-        <h3>Utopilot Internship – SAIC <span>Summer 2024</span></h3>
-        <p>Worked on perception for autonomous vehicles · Point-cloud & OCC visual conversion.</p>
-      </div>
-      <div class="card">
-        <h3>IT Helpdesk – Purdue Fort Wayne <span>2024 – 2025</span></h3>
-        <p>Front-line tech support · Managed loaner laptops · Troubleshooting & escalation.</p>
-      </div>
-    </section>
-
-    <section id="projects" class="reveal">
-      <h2 data-en="Projects" data-zh="项目">Projects</h2>
-      <div class="card">
-        <h3>Black Jack Simulator</h3>
-        <p>JavaFX GUI Blackjack game featuring OOP, UML, event-driven logic, custom styling.</p>
-      </div>
-      <div class="card">
-        <h3>Auto Loan Calculator</h3>
-        <p>JavaFX app computing monthly payments from price, tax, down-payment, options.</p>
-      </div>
-      <div class="card">
-        <h3>Bank Simulator</h3>
-        <p>Console Java app handling deposits, withdrawals, transfers with robust validation.</p>
-      </div>
-    </section>
-
-    <section id="activities" class="reveal">
-      <h2 data-en="Activities & Competitions" data-zh="活动与竞赛">Activities & Competitions</h2>
-      <ul>
-        <li><strong>IEEE Xtreme 2023–2024:</strong> Team lead · Top 50 US</li>
-        <li><strong>National Cyber League 2023–2024:</strong> Collegiate cybersecurity contest</li>
-        <li><strong>Global Game Jam 2024:</strong> 48-hour game dev marathon</li>
-        <li><strong>Community Service 2018–21:</strong> Basketball coach for special-needs children, Karachi</li>
-        <li><strong>Varsity Cross-Country & Swim 2021–23:</strong> Weekly meets · District finalist</li>
-      </ul>
-    </section>
   </main>
-
-  <footer><div class="container">© 2025 Wei Dai</div></footer>
-
-  <script>
-    function setLang(lang){
-      document.querySelectorAll('[data-en]').forEach(el=>{
-        el.textContent = el.getAttribute(lang==='en'?'data-en':'data-zh');
-      });
-      document.getElementById('btn-en').classList.toggle('active',lang==='en');
-      document.getElementById('btn-zh').classList.toggle('active',lang==='zh');
-    }
-
-    const tsparticlesCfg = {
-      light:  {color:'#aaa',links:'#aaa',bg:true},
-      dark:   {color:'#fff',links:'#fff',bg:true},
-      galaxy: {color:'#6cf',links:'#6cf',bg:true},
-      cyber:  {color:'#f0f',links:'#f0f',bg:true}
-    };
-
-    async function initParticles(theme){
-      const cfg = tsparticlesCfg[theme];
-      if(!cfg) return;
-      await tsparticles.load('tsparticles', {
-        background:{color:{value:'transparent'}},
-        particles:{
-          number:{value:60},
-          color:{value:cfg.color},
-          links:{enable:true,color:cfg.links},
-          move:{enable:true,speed:0.7},
-          size:{value:{min:1,max:3}}
-        },
-        fullScreen:{enable:false}
-      });
-    }
-
-    async function setTheme(theme){
-      document.body.className = 'theme-' + theme;
-      await initParticles(theme);
-    }
-
-    ScrollReveal().reveal('.reveal',{distance:'40px',duration:900,easing:'ease-out',origin:'bottom',reset:false});
-    setLang('en'); setTheme('light');
-  </script>
+  <footer class="container">
+    <p>© 2025 Wei Dai | <a href="mailto:david0322v@gmail.com">david0322v@gmail.com</a> | <a href="https://github.com/VitaminDMilk" target="_blank">GitHub</a></p>
+    <p>📞 +1 2605640301 / +86 13636501825</p>
+  </footer>
+  <script src="script.js"></script>
 </body>
 </html>
