@@ -1,131 +1,150 @@
-/* ============ 通用 ============ */
+/* ============ 共用基础 ============ */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Inter', sans-serif;
   overflow-x: hidden;
-  transition: background 0.5s, color 0.5s;
+  transition: background 0.8s, color 0.8s;
   position: relative;
+  line-height: 1.6;
 }
 canvas#bgcanvas {
   position: fixed; top: 0; left: 0;
-  width: 100%; height: 100%;
-  z-index: -1;
+  width: 100%; height: 100%; z-index: -1;
 }
-header, footer {
-  text-align: center; padding: 1rem;
-}
-h1, p, nav, .theme-switcher, .language-switcher {
-  margin-bottom: 0.5rem; text-align: center;
-}
+header, footer { text-align: center; padding: 1rem; }
+h1 { font-weight: 700; font-size: 2rem; margin-bottom: 0.2rem; }
+p#tagline { font-weight: 400; color: inherit; margin-bottom: 0.8rem; }
+nav { margin-bottom: 0.8rem; }
 nav a {
-  margin: 0 0.5rem; text-decoration: none; font-weight: bold;
+  margin: 0 0.5rem; text-decoration: none;
+  font-weight: 600; padding: 0.3rem 0.5rem;
+  border-radius: 4px; transition: background 0.3s;
 }
-.section {
-  max-width: 800px; margin: 2rem auto;
-  padding: 1.5rem; border-radius: 8px;
-  backdrop-filter: blur(6px); /* 半透明毛玻璃 */
-  background: rgba(255,255,255,0.6);
-  transition: background 0.5s;
-  text-align: center;
+nav a:hover { background: rgba(255,255,255,0.2); }
+
+.theme-switcher, .language-switcher {
+  margin-bottom: 0.8rem;
 }
 .theme-switcher button,
 .language-switcher button {
   margin: 0 4px; padding: 6px 10px;
-  border-radius: 4px; border: none; cursor: pointer;
+  border: none; border-radius: 4px; cursor: pointer;
+  transition: transform 0.2s;
+}
+.theme-switcher button:hover,
+.language-switcher button:hover {
+  transform: scale(1.1);
+}
+
+/* 卡片式居中布局 */
+main { max-width: 800px; margin: 0 auto; padding: 1rem 0; }
+.section {
+  background: rgba(255,255,255,0.8);
+  border-radius: 8px; margin-bottom: 1.5rem;
+  padding: 1.5rem; text-align: center;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* 标题下划线 */
+.section h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem; font-weight: 600;
+  position: relative;
+}
+.section h2::after {
+  content: ''; display: block;
+  width: 50px; height: 3px;
+  background: currentColor;
+  margin: 8px auto 16px;
 }
 
 /* ============ 主题：Day Mode ============ */
 .theme-day {
   background: #eef2f7; color: #334;
 }
-.theme-day nav a,
+.theme-day nav a { background: rgba(255,255,255,0.6); color: #334; }
 .theme-day .theme-switcher button,
 .theme-day .language-switcher button {
-  color: #334; background: rgba(255,255,255,0.8);
+  background: rgba(255,255,255,0.8); color: #334;
 }
-.theme-day .section { background: rgba(255,255,255,0.8); }
+.theme-day .section {
+  background: rgba(255,255,255,0.8); color: #334;
+}
 
-/* 太阳光束动画 */
-@keyframes sunrays {
-  from { background-position: 0 0; }
-  to   { background-position: 100% 100%; }
+/* 轻盈飘浮气泡 */
+@keyframes bubble {
+  0%   { transform: translateY(0) scale(1); opacity: 0.6; }
+  50%  { opacity: 0.3; }
+  100% { transform: translateY(-200px) scale(1.4); opacity: 0; }
 }
 .theme-day canvas#bgcanvas {
-  background: url('https://assets.codepen.io/123456/sunrays.png') repeat;
-  animation: sunrays 20s linear infinite;
+  background: none;
+}
+.theme-day canvas#bgcanvas.bubbles {
+  animation: none;
 }
 
 /* ============ 主题：Night Mode ============ */
 .theme-night {
   background: #090b13; color: #ccc;
 }
-.theme-night nav a,
+.theme-night nav a { background: rgba(255,255,255,0.1); color: #8ab4f8; }
 .theme-night .theme-switcher button,
 .theme-night .language-switcher button {
-  color: #8ab4f8; background: rgba(0,0,0,0.5);
+  background: rgba(0,0,0,0.5); color: #8ab4f8;
 }
 .theme-night .section {
-  background: rgba(20,20,30,0.6);
+  background: rgba(20,20,30,0.6); color: #ddd;
 }
 
-/* 星星闪烁 */
-@keyframes stars {
-  0%,100% { opacity: 0.3; }
-  50%      { opacity: 0.8; }
-}
-.theme-night canvas#bgcanvas {
-  background: radial-gradient(#fff 1px, transparent 1px) 0 0,
-              radial-gradient(#fff 1px, transparent 1px) 50px 50px;
-  background-size: 100px 100px;
-  animation: stars 3s ease-in-out infinite;
-}
+/* 夜空星点（Canvas 实现） */
 
 /* ============ 主题：Galaxy ============ */
 .theme-galaxy {
   background: #000; color: #fff;
 }
-.theme-galaxy nav a,
+.theme-galaxy nav a { background: rgba(255,255,255,0.1); color: #ffd700; }
 .theme-galaxy .theme-switcher button,
 .theme-galaxy .language-switcher button {
-  color: #ffd700; background: rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.2); color: #ffd700;
 }
 .theme-galaxy .section {
-  background: rgba(10,10,30,0.6);
+  background: rgba(10,10,30,0.6); color: #fff;
 }
 
-/* 银河缓慢移动 */
-@keyframes galaxy {
+/* 缓慢漂移星云 */
+@keyframes nebula {
   from { background-position: 0 0; }
-  to   { background-position: 1000px 1000px; }
+  to   { background-position: 1000px 800px; }
 }
 .theme-galaxy canvas#bgcanvas {
-  background: url('https://assets.codepen.io/123456/galaxy.png') center/cover no-repeat;
-  animation: galaxy 60s linear infinite;
+  background: url('https://assets.codepen.io/123456/nebula.jpg') center/cover no-repeat;
+  animation: nebula 60s linear infinite;
 }
 
 /* ============ 主题：Cyberpunk ============ */
 .theme-cyberpunk {
   background: #0f1a2a; color: #fff;
 }
-.theme-cyberpunk nav a,
+.theme-cyberpunk nav a { background: rgba(0,0,0,0.5); color: #ff49db; }
 .theme-cyberpunk .theme-switcher button,
 .theme-cyberpunk .language-switcher button {
-  color: #ff49db; background: rgba(0,0,0,0.5);
+  background: rgba(0,0,0,0.7); color: #ff49db;
 }
 .theme-cyberpunk .section {
-  background: rgba(0,0,0,0.6);
+  background: rgba(0,0,0,0.6); color: #fff;
 }
 
-/* 霓虹闪烁 */
-@keyframes neon {
-  0%,100% { box-shadow: 0 0 10px #ff49db; }
-  50%      { box-shadow: 0 0 30px #ff49db; }
+/* 霓虹光栅动画 */
+@keyframes cyberGrid {
+  0% { background-position: 0 0; }
+  100% { background-position: 100px 100px; }
 }
 .theme-cyberpunk canvas#bgcanvas {
-  background: linear-gradient(45deg,
-    rgba(20,20,50,0.3) 25%, transparent 25%,
-    transparent 50%, rgba(20,20,50,0.3) 50%,
-    rgba(20,20,50,0.3) 75%, transparent 75%, transparent);
-  background-size: 100px 100px;
-  animation: neon 2s ease-in-out infinite;
+  background: 
+    linear-gradient(90deg, rgba(255,73,219,0.15) 1px, transparent 1px) repeat,
+    linear-gradient(0deg, rgba(255,73,219,0.15) 1px, transparent 1px) repeat;
+  background-size: 50px 50px;
+  animation: cyberGrid 5s linear infinite;
 }
