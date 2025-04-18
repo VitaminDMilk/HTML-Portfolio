@@ -1,42 +1,76 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    transition: background 0.3s, color 0.3s;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  transition: background 0.3s, color 0.3s;
 }
+
 header, footer {
-    text-align: center;
-    padding: 1rem;
+  text-align: center;
+  padding: 1rem;
 }
+
 nav {
-    margin: 1rem 0;
+  margin: 1rem 0;
 }
+
 nav a {
-    margin: 0 10px;
-    text-decoration: none;
+  margin: 0 10px;
+  text-decoration: none;
 }
+
 .section {
-    margin: 2rem;
-    padding: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 8px;
+  margin: 2rem;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
 }
+
 .theme-light {
-    background: #f7f8fc;
-    color: #000;
+  background: #f7f8fc;
+  color: #000;
 }
+
 .theme-dark {
-    background: #121212;
-    color: #eee;
+  background: #121212;
+  color: #eee;
 }
+
 .theme-galaxy {
-    background: radial-gradient(circle at 20% 30%, #1a2a6c, #b21f1f, #fdbb2d);
-    color: #fff;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #fff;
 }
+
 .theme-cyberpunk {
-    background: linear-gradient(to right, #3f0d12, #a71d31);
-    color: #fff;
+  background: linear-gradient(90deg, #3f0d12, #a71d31);
+  color: #0ff;
 }
+
+.theme-light nav a {
+  color: #000;
+}
+
+.theme-dark nav a {
+  color: #fff;
+}
+
+.theme-galaxy nav a {
+  color: #90e0ef;
+}
+
 .theme-cyberpunk nav a {
-    color: #0ff;
+  color: #0ff;
+}
+
+.theme-light footer a {
+  color: #000;
+}
+
+.theme-dark footer a,
+.theme-galaxy footer a {
+  color: #fff;
+}
+
+.theme-cyberpunk footer a {
+  color: #0ff;
 }
