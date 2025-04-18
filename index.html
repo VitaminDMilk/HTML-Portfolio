@@ -6,7 +6,7 @@
   <title>Wei (David) Dai - Portfolio</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body class="theme-neon">
+<body class="theme-light">
   <canvas id="bgCanvas"></canvas>
 
   <header>
@@ -22,73 +22,20 @@
         <a href="resume.pdf" download class="btn">Download Resume</a>
       </nav>
       <div class="theme-switcher">
-        <button onclick="switchTheme('neon')">🟣</button>
-        <button onclick="switchTheme('glass')">🧊</button>
-        <button onclick="switchTheme('warm')">🟠</button>
+        <button title="Light Mode" onclick="switchTheme('light')">☀️</button>
+        <button title="Dark Mode" onclick="switchTheme('dark')">🌑</button>
+        <button title="Galaxy" onclick="switchTheme('galaxy')">🌌</button>
+        <button title="Cyberpunk" onclick="switchTheme('cyberpunk')">🟣</button>
       </div>
     </div>
   </header>
 
   <main class="container">
-    <section id="education">
-      <h2>Education</h2>
-      <div class="card">
-        <h3>Purdue University Fort Wayne <span>Aug 2023 – May 2027</span></h3>
-        <p>Computer Engineering · Minor: Computer Science · GPA: 3.65 / 4.0</p>
-      </div>
-      <div class="card">
-        <h3>Wyoming Seminary Prep School <span>Aug 2020 – May 2023</span></h3>
-        <p>High School Diploma · GPA: 3.65 / 4.0</p>
-      </div>
-    </section>
-
-    <section id="skills">
-      <h2>Skills</h2>
-      <div class="card">
-        <p><strong>Languages:</strong> Java, Python, C++, JavaFX, SceneBuilder, HTML, CSS</p>
-        <p><strong>Tools:</strong> Unity, AutoCAD, MATLAB, Arduino</p>
-        <p><strong>Spoken:</strong> Chinese (Native), English (TOEFL 101), Spanish (Intermediate)</p>
-      </div>
-    </section>
-
-    <section id="experience">
-      <h2>Internships & Work Experience</h2>
-      <div class="card">
-        <h3>Utopilot Internship – SAIC <span>Summer 2024</span></h3>
-        <p>Worked in the perception department for autonomous vehicles. Learned about point cloud processing and OCC-based visual conversion.</p>
-      </div>
-      <div class="card">
-        <h3>IT Helpdesk – Purdue Fort Wayne <span>2024–2025</span></h3>
-        <p>Provided tech support for students and staff. Handled troubleshooting and laptop management.</p>
-      </div>
-    </section>
-
-    <section id="projects">
-      <h2>Projects</h2>
-      <div class="card">
-        <h3>Black Jack Simulator</h3>
-        <p>JavaFX GUI blackjack game with OOP design, UML, and event-driven logic.</p>
-      </div>
-      <div class="card">
-        <h3>Auto Loan Calculator</h3>
-        <p>JavaFX app to calculate loan payments using price, tax rate, and options.</p>
-      </div>
-      <div class="card">
-        <h3>Bank Simulator</h3>
-        <p>Java console app simulating deposits, withdrawals, transfers, and security logic.</p>
-      </div>
-    </section>
-
-    <section id="activities">
-      <h2>Activities & Competitions</h2>
-      <ul>
-        <li><strong>IEEE Xtreme:</strong> Top 50 nationally (2023–2024)</li>
-        <li><strong>National Cyber League:</strong> Biannual college-level cybersecurity comp</li>
-        <li><strong>Global Game Jam 2024:</strong> Led team on game dev + design</li>
-        <li><strong>Community Service (2018–2021):</strong> Taught basketball to special needs children in Karachi</li>
-        <li><strong>Varsity Sports:</strong> Cross Country & Swim (2021–2023)</li>
-      </ul>
-    </section>
+    <section id="education" class="reveal"><h2>Education</h2>...</section>
+    <section id="skills" class="reveal"><h2>Skills</h2>...</section>
+    <section id="experience" class="reveal"><h2>Experience</h2>...</section>
+    <section id="projects" class="reveal"><h2>Projects</h2>...</section>
+    <section id="activities" class="reveal"><h2>Activities</h2>...</section>
   </main>
 
   <footer>
@@ -97,37 +44,19 @@
     </div>
   </footer>
 
+  <script src="scrollreveal.min.js"></script>
   <script>
     function switchTheme(theme) {
       document.body.className = 'theme-' + theme;
     }
 
-    const canvas = document.getElementById('bgCanvas');
-    const ctx = canvas.getContext('2d');
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    const particles = Array.from({ length: 50 }, () => ({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      r: Math.random() * 3 + 1,
-      dx: (Math.random() - 0.5) * 1,
-      dy: (Math.random() - 0.5) * 1,
-    }));
-    function animate() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      particles.forEach(p => {
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(255,255,255,0.5)';
-        ctx.fill();
-        p.x += p.dx;
-        p.y += p.dy;
-        if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
-        if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
-      });
-      requestAnimationFrame(animate);
-    }
-    animate();
+    ScrollReveal().reveal('.reveal', {
+      duration: 1000,
+      origin: 'bottom',
+      distance: '30px',
+      easing: 'ease-in-out',
+      reset: false
+    });
   </script>
 </body>
 </html>
