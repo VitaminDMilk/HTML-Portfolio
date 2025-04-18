@@ -10,7 +10,14 @@
     <header>
         <h1 id="name">Wei (David) Dai</h1>
         <p id="tagline">Aspiring Embedded & AI Engineer</p>
-        <nav id="navbar"></nav>
+        <nav>
+            <a href="#education" class="nav-link" data-key="education">Education</a>
+            <a href="#skills" class="nav-link" data-key="skills">Skills</a>
+            <a href="#experience" class="nav-link" data-key="experience">Experience</a>
+            <a href="#projects" class="nav-link" data-key="projects">Projects</a>
+            <a href="#activities" class="nav-link" data-key="activities">Activities</a>
+            <a href="resume.pdf" download id="download" data-key="download">Download Resume</a>
+        </nav>
         <div class="theme-switcher">
             <button onclick="setTheme('light')">🌕</button>
             <button onclick="setTheme('dark')">🌑</button>
@@ -28,7 +35,13 @@
         <section id="projects" class="section reveal"></section>
         <section id="activities" class="section reveal"></section>
     </main>
-    <footer id="footer"></footer>
+    <footer>
+        <p>© 2025 <span id="footer-name">Wei Dai</span> |
+            <a href="mailto:david0322v@gmail.com">david0322v@gmail.com</a> |
+            <a href="https://github.com/VitaminDMilk" target="_blank">GitHub</a><br>
+            📞 +1 2605640301 / +86 13636501825
+        </p>
+    </footer>
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="script.js"></script>
 </body>

@@ -1,3 +1,4 @@
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -7,6 +8,9 @@ body {
 header, footer {
     text-align: center;
     padding: 1rem;
+}
+nav {
+    margin: 1rem 0;
 }
 nav a {
     margin: 0 10px;
@@ -33,4 +37,7 @@ nav a {
 .theme-cyberpunk {
     background: linear-gradient(to right, #3f0d12, #a71d31);
     color: #fff;
+}
+.theme-cyberpunk nav a {
+    color: #0ff;
 }
