@@ -22,8 +22,8 @@
         <a href="resume.pdf" download class="btn">Download Resume</a>
       </nav>
       <div class="theme-switcher">
-        <button title="Light Mode" onclick="switchTheme('light')">☀️</button>
-        <button title="Dark Mode" onclick="switchTheme('dark')">🌑</button>
+        <button title="Light" onclick="switchTheme('light')">☀️</button>
+        <button title="Dark" onclick="switchTheme('dark')">🌑</button>
         <button title="Galaxy" onclick="switchTheme('galaxy')">🌌</button>
         <button title="Cyberpunk" onclick="switchTheme('cyberpunk')">🟣</button>
       </div>
@@ -31,11 +31,65 @@
   </header>
 
   <main class="container">
-    <section id="education" class="reveal"><h2>Education</h2>...</section>
-    <section id="skills" class="reveal"><h2>Skills</h2>...</section>
-    <section id="experience" class="reveal"><h2>Experience</h2>...</section>
-    <section id="projects" class="reveal"><h2>Projects</h2>...</section>
-    <section id="activities" class="reveal"><h2>Activities</h2>...</section>
+    <section id="education" class="reveal">
+      <h2>Education</h2>
+      <div class="card">
+        <h3>Purdue University Fort Wayne <span>Aug 2023 – May 2027</span></h3>
+        <p>Major: Computer Engineering · Minor: Computer Science · GPA: 3.65 / 4.0 · Dean’s List & Honors Student</p>
+      </div>
+      <div class="card">
+        <h3>Wyoming Seminary Prep School <span>Aug 2020 – May 2023</span></h3>
+        <p>High School Diploma · GPA: 3.65 / 4.0</p>
+      </div>
+    </section>
+
+    <section id="skills" class="reveal">
+      <h2>Skills</h2>
+      <div class="card">
+        <p><strong>Programming:</strong> Java, Python, C++, JavaFX, SceneBuilder, HTML, CSS</p>
+        <p><strong>Tools:</strong> Unity, AutoCAD, MATLAB, Arduino</p>
+        <p><strong>Languages:</strong> Chinese (Native), English (TOEFL 101), Spanish (Intermediate)</p>
+      </div>
+    </section>
+
+    <section id="experience" class="reveal">
+      <h2>Internships & Work Experience</h2>
+      <div class="card">
+        <h3>Utopilot Internship – SAIC <span>Summer 2024</span></h3>
+        <p>Worked in the perception department for autonomous vehicles. Learned about point cloud processing and OCC-based visual conversion.</p>
+      </div>
+      <div class="card">
+        <h3>IT Helpdesk – Purdue Fort Wayne <span>2024–2025</span></h3>
+        <p>Provided technical support for students and staff. Handled troubleshooting, password resets, laptop distribution, and escalation.</p>
+      </div>
+    </section>
+
+    <section id="projects" class="reveal">
+      <h2>Projects</h2>
+      <div class="card">
+        <h3>Black Jack Simulator</h3>
+        <p>A JavaFX GUI-based Blackjack game using OOP design, UML, game logic, and GUI interaction.</p>
+      </div>
+      <div class="card">
+        <h3>Auto Loan Calculator</h3>
+        <p>A GUI application to calculate monthly loan payments based on input values such as price, tax, and options.</p>
+      </div>
+      <div class="card">
+        <h3>Bank Simulator</h3>
+        <p>Java console application for checking balance, transferring money, withdrawing/depositing, and account management.</p>
+      </div>
+    </section>
+
+    <section id="activities" class="reveal">
+      <h2>Activities & Competitions</h2>
+      <ul>
+        <li><strong>IEEE Xtreme 2023–2024:</strong> Team leader, placed Top 50 in the nation.</li>
+        <li><strong>National Cyber League 2023–2024:</strong> Participated in cybersecurity competitions.</li>
+        <li><strong>Global Game Jam 2024:</strong> Led team in game design and programming roles.</li>
+        <li><strong>Community Service (2018–2021):</strong> Taught basketball to children with special needs in Karachi.</li>
+        <li><strong>Varsity Cross Country & Swim (2021–2023):</strong> Competed in weekly meets and district championships.</li>
+      </ul>
+    </section>
   </main>
 
   <footer>
@@ -49,11 +103,10 @@
     function switchTheme(theme) {
       document.body.className = 'theme-' + theme;
     }
-
     ScrollReveal().reveal('.reveal', {
       duration: 1000,
       origin: 'bottom',
-      distance: '30px',
+      distance: '40px',
       easing: 'ease-in-out',
       reset: false
     });
