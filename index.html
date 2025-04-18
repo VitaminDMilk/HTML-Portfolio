@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial‑scale=1.0"/>
   <title>Wei (David) Dai Portfolio</title>
+  <!-- 引入更好看的网络字体 -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
@@ -25,12 +27,11 @@
       <button onclick="setTheme('cyberpunk')" title="Cyberpunk">💜</button>
     </div>
     <div class="language-switcher">
-      <button onclick="setLanguage('en')">EN</button> /
-      <button onclick="setLanguage('zh')">中</button>
+      <button onclick="setLanguage('en')">EN</button> / <button onclick="setLanguage('zh')">中</button>
     </div>
   </header>
 
-  <!-- 四个主题都会有这段 canvas，用于背景特效 -->
+  <!-- 全部主题共用的动效画布 -->
   <canvas id="bgcanvas"></canvas>
 
   <main>
