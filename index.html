@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Wei (David) Dai Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
   <header>
     <h1 id="name">Wei (David) Dai</h1>
-    <p id="tagline">Aspiring Embedded & AI Engineer</p>
-
+    <p id="tagline">Aspiring Embedded &amp; AI Engineer</p>
     <nav>
       <a href="#education" class="nav-link" data-key="education">Education</a>
       <a href="#skills"    class="nav-link" data-key="skills">Skills</a>
@@ -19,19 +18,20 @@
       <a href="#activities"class="nav-link" data-key="activities">Activities</a>
       <a href="resume.pdf" download id="download">Download Resume</a>
     </nav>
-
     <div class="theme-switcher">
-      <button onclick="setTheme('light')"    title="Light">🌕</button>
-      <button onclick="setTheme('dark')"     title="Dark">🌑</button>
-      <button onclick="setTheme('galaxy')"   title="Galaxy">🪐</button>
-      <button onclick="setTheme('cyberpunk')"title="Cyberpunk">💜</button>
+      <button onclick="setTheme('day')"       title="Day Mode">🌞</button>
+      <button onclick="setTheme('night')"     title="Night Mode">🌜</button>
+      <button onclick="setTheme('galaxy')"    title="Galaxy">🪐</button>
+      <button onclick="setTheme('cyberpunk')" title="Cyberpunk">💜</button>
     </div>
-
     <div class="language-switcher">
       <button onclick="setLanguage('en')">EN</button> /
       <button onclick="setLanguage('zh')">中</button>
     </div>
   </header>
+
+  <!-- 四个主题都会有这段 canvas，用于背景特效 -->
+  <canvas id="bgcanvas"></canvas>
 
   <main>
     <section id="education" class="section reveal"></section>
@@ -43,16 +43,14 @@
 
   <footer>
     <p>
-      © 2025 <span id="footer-name">Wei Dai</span> |
-      <a href="mailto:david0322v@gmail.com">david0322v@gmail.com</a> |
-      <a href="https://github.com/VitaminDMilk" target="_blank">GitHub</a><br>
-      📞 +1 260 564 0301 / +86 136 3650 1825
+      © 2025 <span id="footer-name">Wei Dai</span> |
+      <a href="mailto:david0322v@gmail.com">david0322v@gmail.com</a> |
+      <a href="https://github.com/VitaminDMilk" target="_blank">GitHub</a><br/>
+      📞 +1 260 564 0301 / +86 136 3650 1825
     </p>
   </footer>
 
-  <!-- 必须先加载 ScrollReveal，再加载自定义脚本 -->
   <script src="https://unpkg.com/scrollreveal"></script>
   <script src="script.js"></script>
 </body>
 </html>
-
