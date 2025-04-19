@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <title>Wei (David) Dai Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -22,19 +21,18 @@
       <a href="resume.pdf" download id="download" data-key="download">Download Resume</a>
     </nav>
     <div class="theme-switcher">
-      <button onclick="setTheme('day')"    title="Day">🌞</button>
-      <button onclick="setTheme('night')"  title="Night">🌜</button>
-      <!-- ocean 模式已删 -->
-      <button onclick="setTheme('blush')"  title="Blush">🌸</button>
+      <button data-theme="day">🌞</button>
+      <button data-theme="night">🌜</button>
+      <button data-theme="blue">🌊</button>
+      <button data-theme="pink">🌸</button>
     </div>
     <div class="language-switcher">
-      <button onclick="setLanguage('en')">EN</button> /
-      <button onclick="setLanguage('zh')">中</button>
+      <button data-lang="en">EN</button> / 
+      <button data-lang="zh">中</button>
     </div>
   </header>
 
   <main>
-    <!-- 只留这几个空占位，脚本会动态填充内容 -->
     <section id="education" class="section reveal"></section>
     <section id="skills"    class="section reveal"></section>
     <section id="experience"class="section reveal"></section>
@@ -44,10 +42,10 @@
 
   <footer>
     <p>
-      © 2025 <span id="footer-name">Wei Dai</span> |
-      <a href="mailto:david0322v@gmail.com">david0322v@gmail.com</a> |
+      © 2025 <span id="footer-name">Wei Dai</span> |
+      <a href="mailto:david0322v@gmail.com">david0322v@gmail.com</a> |
       <a href="https://github.com/VitaminDMilk" target="_blank">GitHub</a><br>
-      📞 +1 260 564 0301 / +86 136 3650 1825
+      📞 +1 260‑564‑0301 / +86 136‑3650‑1825
     </p>
   </footer>
 
