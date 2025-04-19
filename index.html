@@ -4,58 +4,56 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Wei (David) Dai Portfolio</title>
+  <!-- 引入自定义 Poppins 字体 -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
-<body class="theme-day">
-  <!-- 背景 Canvas，用于绘制气泡/粒子特效 -->
+<body>
+  <!-- 背景 Canvas -->
   <canvas id="bgcanvas"></canvas>
 
   <header>
-    <h1 id="name"></h1>
-    <p id="tagline"></p>
-
+    <h1 id="name">Wei (David) Dai</h1>
+    <p id="tagline">Aspiring Embedded & AI Engineer</p>
     <nav>
-      <a href="#education" class="nav-link" data-section="education">Education</a>
-      <a href="#skills" class="nav-link" data-section="skills">Skills</a>
-      <a href="#experience" class="nav-link" data-section="experience">Experience</a>
-      <a href="#projects" class="nav-link" data-section="projects">Projects</a>
-      <a href="#activities" class="nav-link" data-section="activities">Activities</a>
-      <a href="resume.pdf" download id="download" class="nav-link" data-section="download">Download Resume</a>
+      <a href="#education" class="nav-link" data-key="education">Education</a>
+      <a href="#skills" class="nav-link" data-key="skills">Skills</a>
+      <a href="#experience" class="nav-link" data-key="experience">Experience</a>
+      <a href="#projects" class="nav-link" data-key="projects">Projects</a>
+      <a href="#activities" class="nav-link" data-key="activities">Activities</a>
+      <a href="resume.pdf" download id="download" data-key="download">Download Resume</a>
     </nav>
-
     <div class="theme-switcher">
-      <button data-theme="day">🌞</button>
-      <button data-theme="night">🌜</button>
-      <button data-theme="ocean">🌊</button>
-      <button data-theme="blush">🌸</button>
+      <button onclick="setTheme('day')" title="Day">🌞</button>
+      <button onclick="setTheme('night')" title="Night">🌜</button>
+      <button onclick="setTheme('ocean')" title="Ocean">🌊</button>
+      <button onclick="setTheme('blush')" title="Blush">🌸</button>
     </div>
-
     <div class="language-switcher">
-      <button data-lang="en">EN</button> /
-      <button data-lang="zh">中</button>
+      <button onclick="setLanguage('en')">EN</button> /
+      <button onclick="setLanguage('zh')">中</button>
     </div>
   </header>
 
   <main>
     <section id="education" class="section reveal"></section>
-    <section id="skills" class="section reveal"></section>
-    <section id="experience" class="section reveal"></section>
-    <section id="projects" class="section reveal"></section>
-    <section id="activities" class="section reveal"></section>
+    <section id="skills"    class="section reveal"></section>
+    <section id="experience"class="section reveal"></section>
+    <section id="projects"  class="section reveal"></section>
+    <section id="activities"class="section reveal"></section>
   </main>
 
   <footer>
     <p>
-      © 2025 <span id="footer-name"></span> |
-      <a id="footer-email" href="mailto:"></a> |
-      <a href="https://github.com/VitaminDMilk" target="_blank">GitHub</a><br/>
+      © 2025 <span id="footer-name">Wei Dai</span> |
+      <a href="mailto:david0322v@gmail.com">david0322v@gmail.com</a> |
+      <a href="https://github.com/VitaminDMilk" target="_blank">GitHub</a><br>
       📞 +1 260 564 0301 / +86 136 3650 1825
     </p>
   </footer>
 
   <!-- ScrollReveal -->
   <script src="https://unpkg.com/scrollreveal"></script>
-  <!-- 主逻辑脚本 -->
-  <script src="script.js" defer></script>
+  <script src="script.js"></script>
 </body>
 </html>
