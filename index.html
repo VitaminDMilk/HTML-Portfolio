@@ -6,8 +6,8 @@
   <title>Wei (David) Dai Portfolio</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-  <!-- Canvas for background animations -->
+<body class="theme-day">
+  <!-- 背景动画画布 -->
   <canvas id="bgcanvas"></canvas>
 
   <header>
@@ -24,14 +24,14 @@
     </nav>
 
     <div class="theme-switcher">
-      <button onclick="setTheme('day')">🌞</button>
-      <button onclick="setTheme('night')">🌜</button>
-      <button onclick="setTheme('ocean')">🌊</button>
-      <button onclick="setTheme('blush')">🌸</button>
+      <button onclick="setTheme('day')"   title="Day Mode">🌞</button>
+      <button onclick="setTheme('night')" title="Night Mode">🌜</button>
+      <button onclick="setTheme('ocean')" title="Ocean Mode">🌊</button>
+      <button onclick="setTheme('blush')" title="Blush Mode">🌸</button>
     </div>
 
     <div class="language-switcher">
-      <button onclick="setLanguage('en')">EN</button> / 
+      <button onclick="setLanguage('en')">EN</button> /
       <button onclick="setLanguage('zh')">中</button>
     </div>
   </header>
@@ -46,14 +46,14 @@
 
   <footer>
     <p>
-      © 2025 <span id="footer-name">Wei Dai</span> |
+      © 2025 <span id="footer-name">Wei Dai</span> |
       <a href="mailto:david0322v@gmail.com">david0322v@gmail.com</a> |
       <a href="https://github.com/VitaminDMilk" target="_blank">GitHub</a><br>
-      📞 +1 260 564 0301 / +86 136 3650 1825
+      📞 +1 260 564 0301 / +86 136 3650 1825
     </p>
   </footer>
 
-  <!-- Scripts -->
+  <!-- ScrollReveal 动画 & 主脚本 -->
   <script src="https://unpkg.com/scrollreveal"></script>
   <script src="script.js"></script>
 </body>
