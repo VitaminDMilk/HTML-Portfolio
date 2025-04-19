@@ -14,11 +14,11 @@ const content = {
       education: `
         <h2>Education</h2>
         <div>
-          <strong>Purdue University Fort Wayne 2023‑08 – 2027‑05</strong>
+          <strong>Purdue University Fort Wayne  -  2023/08 – 2027/05</strong>
           <p>Major: Computer Engineering · Minor: Computer Science · GPA 3.65/4.0 · Dean’s List & Honors</p>
         </div>
         <div>
-          <strong>Wyoming Seminary Prep 2020‑08 – 2023‑05</strong>
+          <strong>Wyoming Seminary Prep -  2020/08 – 2023/05</strong>
           <p>High School Diploma</p>
         </div>`,
       skills: `
@@ -71,11 +71,11 @@ const content = {
       education: `
         <h2>教育</h2>
         <div>
-          <strong>普渡大学韦恩堡分校 2023年8月 – 2027年5月</strong>
+          <strong>普渡大学韦恩堡分校  -  2023年8月 – 2027年5月</strong>
           <p>主修：计算机工程 · 辅修：计算机科学 · GPA 3.65/4.0 · 荣誉名单</p>
         </div>
         <div>
-          <strong>怀俄明中学 2020年8月 – 2023年5月</strong>
+          <strong>怀俄明中学  -  2020年8月 – 2023年5月</strong>
           <p>高中毕业</p>
         </div>`,
       skills: `
