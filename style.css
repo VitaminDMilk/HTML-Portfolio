@@ -1,85 +1,103 @@
-/* 全局 & 布局 */
+/* ========== 全局 ========== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
 body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  overflow-x: hidden;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
   transition: background 0.5s, color 0.5s;
+  position: relative;
+  overflow-x: hidden;
 }
-header, footer {
-  text-align: center;
-  padding: 1rem;
-}
-nav {
-  margin: 0.5rem 0;
-}
+header, footer { text-align: center; padding: 1rem; }
 nav a {
-  margin: 0 0.5rem;
+  margin: 0 .5rem;
   text-decoration: none;
-  font-weight: 600;
   color: inherit;
+  font-size: 1rem;
 }
+.language-switcher,
+.theme-switcher { margin: .5rem; }
 .theme-switcher button,
 .language-switcher button {
-  margin: 0 0.25rem;
-  padding: 0.3rem;
+  margin: 0 .25rem;
+  padding: .3rem .6rem;
   border: none;
-  background: rgba(255,255,255,0.8);
+  background: rgba(255,255,255,.8);
   border-radius: 4px;
   cursor: pointer;
 }
-.section {
-  width: 90%;
+.theme-switcher button.active,
+.language-switcher button.active {
+  outline: 2px solid #333;
+}
+
+/* 把内容区水平居中，内部文字左对齐 */
+main {
   max-width: 700px;
-  margin: 1.5rem auto;
-  padding: 1rem;
-  background: rgba(255,255,255,0.9);
+  margin: 2rem auto;
+}
+.section {
+  background: rgba(255,255,255,.9);
+  margin: 1rem 0;
+  padding: 1rem 1.2rem;
   border-radius: 8px;
-  text-align: left;        /* 文本左对齐 */
-  font-size: 1.05rem;      /* 稍微放大一点 */
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  text-align: left;
+  font-size: 1.1rem;
+  line-height: 1.5;
 }
 
-/* 默认主题：Day */
+/* ========== ScrollReveal 默认样式 ========== */
+.reveal { opacity: 0; }
+
+/* ========== 主题色 & 背景动画 ========== */
+
+/* ——— 日间  ——— */
 .theme-day {
-  background: #e8f1f9;
-  color: #334;
+  background: linear-gradient(135deg, #d0e8ff, #f0f8ff);
 }
-.theme-day #bgcanvas {
-  display: block;
+.theme-day canvas {
+  position: fixed; top:0; left:0; width:100%; height:100%; z-index:-1;
+}
+.theme-day .bubble {
+  background: rgba(173, 216, 230, .6);
+  border-radius: 50%;
+  position: absolute;
+  animation: bubbleMove 15s linear infinite;
+}
+@keyframes bubbleMove {
+  0%   { transform: translateY(120vh) scale(0); }
+  50%  { opacity: .7; }
+  100% { transform: translateY(-20vh) scale(1); }
 }
 
-/* Night 主题 */
+/* ——— 夜间  ——— */
 .theme-night {
-  background: #0b0d17;
+  background: #0b0f1a;
   color: #ddd;
 }
-.theme-night #bgcanvas {
-  display: block;
+.theme-night canvas {
+  position: fixed; top:0; left:0; width:100%; height:100%; z-index:-1;
+}
+@keyframes starTwinkle {
+  0%,100% { opacity: .2; }
+  50%      { opacity: 1; }
 }
 
-/* Blush 主题（去掉原来的泡泡，改成飘花瓣） */
-.theme-blush {
-  background: #fff5f8;
+/* ——— 海蓝（已删）  ——— */
+/* 不再使用 */
+
+/* ——— 樱花  ——— */
+.theme-pink {
+  background: linear-gradient(135deg, #ffe4ec, #fff0f5);
   color: #333;
 }
-.theme-blush #bgcanvas {
-  display: none;
+.theme-pink canvas {
+  position: fixed; top:0; left:0; width:100%; height:100%; z-index:-1;
 }
-
-/* 飘落花瓣样式 */
 .petal {
-  position: fixed;
-  top: -20px;
-  width: 16px; height: 16px;
-  background: radial-gradient(circle at 30% 30%, #ffc0cb, #ff69b4);
-  border-radius: 50% 30% 50% 30%;
-  opacity: 0.8;
-  pointer-events: none;
-  animation: fall linear infinite;
+  position: absolute;
+  background: url('https://i.imgur.com/Nv2QK4Y.png') no-repeat center / contain;
+  animation: petalFall 8s linear infinite;
 }
-@keyframes fall {
-  to {
-    transform: translateY(110vh) translateX(30px) rotate(360deg);
-    opacity: 0;
-  }
+@keyframes petalFall {
+  0%   { transform: translateY(-10vh) rotate(0deg); opacity:1; }
+  100% { transform: translateY(100vh) rotate(360deg); opacity:0; }
 }
