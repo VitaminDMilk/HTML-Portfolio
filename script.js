@@ -19,7 +19,7 @@ const content = {
         </div>
         <div>
           <strong>Wyoming Seminary Prep 2020‑08 – 2023‑05</strong>
-          <p>High School Diploma · GPA 3.65/4.0</p>
+          <p>High School Diploma</p>
         </div>`,
       skills: `
         <h2>Skills</h2>
@@ -76,7 +76,7 @@ const content = {
         </div>
         <div>
           <strong>怀俄明中学 2020年8月 – 2023年5月</strong>
-          <p>高中毕业 · GPA 3.65/4.0</p>
+          <p>高中毕业</p>
         </div>`,
       skills: `
         <h2>技能</h2>
