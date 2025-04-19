@@ -85,7 +85,7 @@ main {
   50%      { opacity: 1; }
 }
 
-/* 海洋（蓝色）*/
+/* 海洋（蓝色，不再用气泡，改为波浪） */
 .theme-blue {
   background: linear-gradient(135deg, #a0d8f1, #63b8e3);
   color: #fff;
@@ -106,7 +106,7 @@ main {
   100% { transform: scale(0.8); opacity: .5; }
 }
 
-/* 樱花（粉色）*/
+/* 樱花（粉色，花瓣下落） */
 .theme-pink {
   background: linear-gradient(135deg, #ffe4ec, #fff0f5);
   color: #333;
