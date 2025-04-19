@@ -1,125 +1,97 @@
-/* —— 全局 & 布局 —— */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  transition: background 0.5s, color 0.5s;
-  overflow-x: hidden;
+html, body { width: 100%; height: 100%; font-family: 'Poppins', sans-serif; }
+
+#bgcanvas {
+  position: fixed; top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: -1;
 }
-header, footer { text-align: center; padding: 1rem; }
-nav a {
-  margin: 0 .5rem;
-  text-decoration: none;
-  color: inherit;
+
+body {
+  transition: background 0.5s, color 0.5s;
+  text-align: center;
   font-size: 1rem;
 }
-.theme-switcher, .language-switcher {
-  margin: .5rem;
+
+header { padding: 2rem 1rem; }
+header h1 {
+  font-size: 2.4rem; font-weight: 600;
+  margin-bottom: 0.2rem;
 }
+header p {
+  font-size: 1.1rem; font-weight: 300;
+  color: #555; margin-bottom: 1.2rem;
+}
+
+nav { margin-bottom: 1.2rem; }
+nav a {
+  display: inline-block; margin: 0 0.6rem;
+  padding: 0.6rem 1.2rem; border-radius: 6px;
+  text-decoration: none; font-weight: 500;
+  backdrop-filter: blur(6px);
+}
+
 .theme-switcher button,
 .language-switcher button {
-  margin: 0 .25rem;
-  padding: .3rem .6rem;
-  border: none;
-  background: rgba(255,255,255,.8);
-  border-radius: 4px;
-  cursor: pointer;
-}
-.theme-switcher button.active,
-.language-switcher button.active {
-  outline: 2px solid #333;
+  margin: 0 0.4rem; padding: 0.5rem;
+  border: none; border-radius: 6px;
+  cursor: pointer; backdrop-filter: blur(6px);
 }
 
-/* 内容区水平居中，内部左对齐，字体放大 */
-main {
-  max-width: 700px;
-  margin: 2rem auto;
-}
+main { padding: 1rem; }
 .section {
-  background: rgba(255,255,255,.9);
-  margin: 1rem 0;
-  padding: 1.2rem;
-  border-radius: 8px;
-  text-align: left;
-  font-size: 1.1rem;
-  line-height: 1.5;
+  max-width: 700px; margin: 1.5rem auto;
+  padding: 1.8rem; border-radius: 12px;
+  text-align: left; backdrop-filter: blur(8px);
 }
-.reveal { opacity: 0; }
+.section h2 {
+  margin-bottom: 1rem; font-weight: 600;
+  font-size: 1.6rem; border-bottom: 2px solid currentColor;
+  display: inline-block; padding-bottom: 0.3rem;
+}
+.section div,
+.section p,
+.section ul { margin-top: 0.8rem; line-height: 1.7; }
+.section ul { list-style: none; padding-left: 0; }
+.section ul li::before { content: '•'; margin-right: 0.6rem; }
 
-/* —— 各主题 背景 & 动画 —— */
+footer {
+  padding: 2rem 1rem; font-size: 0.9rem; color: #555;
+}
+footer a { text-decoration: none; color: inherit; }
 
-/* 日间 */
+/* ==== 主题样式 ==== */
+
+/* Day */
 .theme-day {
-  background: linear-gradient(135deg, #d0e8ff, #f0f8ff);
-}
-.theme-day canvas {
-  position: fixed; top:0; left:0; width:100%; height:100%; z-index:-1;
-}
-.theme-day .bubble {
-  position: absolute;
-  border-radius: 50%;
-  background: rgba(173,216,230,0.6);
-  animation: bubbleMove 15s linear infinite;
-}
-@keyframes bubbleMove {
-  0%   { transform: translateY(120vh) scale(0); }
-  50%  { opacity: .7; }
-  100% { transform: translateY(-20vh) scale(1); }
-}
-
-/* 夜间 */
-.theme-night {
-  background: #0b0f1a;
-  color: #ddd;
-}
-.theme-night canvas {
-  position: fixed; top:0; left:0; width:100%; height:100%; z-index:-1;
-}
-.theme-night .star {
-  position: absolute;
-  background: white;
-  border-radius: 50%;
-  animation: starTwinkle 2s infinite ease-in-out;
-}
-@keyframes starTwinkle {
-  0%,100% { opacity: .2; }
-  50%      { opacity: 1; }
-}
-
-/* 海洋（蓝色，不再用气泡，改为波浪） */
-.theme-blue {
-  background: linear-gradient(135deg, #a0d8f1, #63b8e3);
-  color: #fff;
-}
-.theme-blue canvas {
-  position: fixed; top:0; left:0; width:100%; height:100%; z-index:-1;
-}
-.theme-blue .wave {
-  position: absolute;
-  width: 200px; height: 200px;
-  background: rgba(255,255,255,0.1);
-  border-radius: 50%;
-  animation: wavePulse 3s infinite ease-in-out;
-}
-@keyframes wavePulse {
-  0% { transform: scale(0.8); opacity: .5; }
-  50% { transform: scale(1.2); opacity: .2; }
-  100% { transform: scale(0.8); opacity: .5; }
-}
-
-/* 樱花（粉色，花瓣下落） */
-.theme-pink {
-  background: linear-gradient(135deg, #ffe4ec, #fff0f5);
+  background: linear-gradient(135deg, #e0f2f7, #f7fbff);
   color: #333;
 }
-.theme-pink canvas {
-  position: fixed; top:0; left:0; width:100%; height:100%; z-index:-1;
+.theme-day nav a { background: rgba(255,255,255,0.8); color: #333; }
+.theme-day .section { background: rgba(255,255,255,0.9); }
+
+/* Night */
+.theme-night {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #eee;
 }
-.theme-pink .petal {
-  position: absolute;
-  background: url('https://i.imgur.com/Nv2QK4Y.png') no-repeat center / contain;
-  animation: petalFall 8s linear infinite;
+.theme-night nav a { background: rgba(0,0,0,0.6); color: #eee; }
+.theme-night .section { background: rgba(20,20,20,0.7); }
+
+/* Ocean */
+.theme-ocean {
+  background: linear-gradient(135deg, #2e8bc0, #2978b5);
+  color: #fff;
 }
-@keyframes petalFall {
-  0%   { transform: translateY(-10vh) rotate(0deg); opacity:1; }
-  100% { transform: translateY(100vh) rotate(360deg); opacity:0; }
+.theme-ocean nav a { background: rgba(255,255,255,0.3); color: #fff; }
+.theme-ocean .section { background: rgba(255,255,255,0.1); }
+
+/* Blush */
+.theme-blush {
+  background: linear-gradient(135deg, #ffe2e2, #ffafaf);
+  color: #333;
 }
+.theme-blush nav a { background: rgba(255,255,255,0.8); color: #333; }
+.theme-blush .section { background: rgba(255,255,255,0.8); }
