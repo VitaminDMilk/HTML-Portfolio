@@ -1,97 +1,73 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html, body { width: 100%; height: 100%; font-family: 'Poppins', sans-serif; }
+* { box-sizing: border-box; margin:0; padding:0 }
+html, body { width:100%; height:100%; font-family:'Poppins',sans-serif }
+body { transition: background 0.5s, color 0.5s; text-align:center; }
 
+/* 背景 Canvas */
 #bgcanvas {
-  position: fixed; top: 0; left: 0;
-  width: 100%; height: 100%;
-  z-index: -1;
+  position:fixed; top:0; left:0; width:100%; height:100%; z-index:-1;
 }
 
-body {
-  transition: background 0.5s, color 0.5s;
-  text-align: center;
-  font-size: 1rem;
-}
+/* Header & Nav */
+header { padding:2rem 1rem }
+header h1 { font-size:2.2rem; font-weight:600; margin-bottom:.3rem }
+header p  { font-weight:300; color:#555; margin-bottom:1rem }
 
-header { padding: 2rem 1rem; }
-header h1 {
-  font-size: 2.4rem; font-weight: 600;
-  margin-bottom: 0.2rem;
-}
-header p {
-  font-size: 1.1rem; font-weight: 300;
-  color: #555; margin-bottom: 1.2rem;
-}
-
-nav { margin-bottom: 1.2rem; }
+nav { margin-bottom:1rem }
 nav a {
-  display: inline-block; margin: 0 0.6rem;
-  padding: 0.6rem 1.2rem; border-radius: 6px;
-  text-decoration: none; font-weight: 500;
-  backdrop-filter: blur(6px);
+  display:inline-block; margin:0 .5rem; padding:.5rem 1rem;
+  border-radius:6px; text-decoration:none; font-weight:500;
+  backdrop-filter:blur(6px);
 }
 
+/* Theme & Language Switchers */
 .theme-switcher button,
 .language-switcher button {
-  margin: 0 0.4rem; padding: 0.5rem;
-  border: none; border-radius: 6px;
-  cursor: pointer; backdrop-filter: blur(6px);
+  margin:0 .3rem; padding:.4rem; border:none; border-radius:6px;
+  cursor:pointer; backdrop-filter:blur(6px);
 }
 
-main { padding: 1rem; }
+/* Sections */
+main { padding:1rem }
 .section {
-  max-width: 700px; margin: 1.5rem auto;
-  padding: 1.8rem; border-radius: 12px;
-  text-align: left; backdrop-filter: blur(8px);
+  max-width:720px; margin:1rem auto; padding:1.5rem;
+  border-radius:10px; text-align:left; backdrop-filter:blur(8px);
 }
 .section h2 {
-  margin-bottom: 1rem; font-weight: 600;
-  font-size: 1.6rem; border-bottom: 2px solid currentColor;
-  display: inline-block; padding-bottom: 0.3rem;
+  margin-bottom:.8rem; font-weight:600; font-size:1.5rem;
+  border-bottom:2px solid currentColor; display:inline-block;
+  padding-bottom:.3rem;
 }
-.section div,
-.section p,
-.section ul { margin-top: 0.8rem; line-height: 1.7; }
-.section ul { list-style: none; padding-left: 0; }
-.section ul li::before { content: '•'; margin-right: 0.6rem; }
+.section div, .section p, .section ul { margin-top:.8rem; line-height:1.6 }
+.section ul { list-style:none; padding-left:0 }
+.section ul li::before { content:'•'; margin-right:.5rem }
 
-footer {
-  padding: 2rem 1rem; font-size: 0.9rem; color: #555;
-}
-footer a { text-decoration: none; color: inherit; }
+/* Footer */
+footer { padding:2rem 1rem; font-size:.9rem; color:#555 }
+footer a { text-decoration:none; color:inherit }
 
-/* ==== 主题样式 ==== */
-
-/* Day */
+/* ———— Themes ———— */
+/* 1) Day */
 .theme-day {
-  background: linear-gradient(135deg, #e0f2f7, #f7fbff);
-  color: #333;
+  background: linear-gradient(135deg,#e0f2f7,#f7fbff);
+  color:#333;
 }
-.theme-day nav a { background: rgba(255,255,255,0.8); color: #333; }
-.theme-day .section { background: rgba(255,255,255,0.9); }
+.theme-day nav a    { background:rgba(255,255,255,0.7); color:#333 }
+.theme-day .section { background:rgba(255,255,255,0.8) }
 
-/* Night */
+/* 2) Night */
 .theme-night {
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-  color: #eee;
+  background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  color:#eee;
 }
-.theme-night nav a { background: rgba(0,0,0,0.6); color: #eee; }
-.theme-night .section { background: rgba(20,20,20,0.7); }
+.theme-night nav a    { background:rgba(0,0,0,0.6); color:#eee }
+.theme-night .section { background:rgba(20,20,20,0.7) }
 
-/* Ocean */
-.theme-ocean {
-  background: linear-gradient(135deg, #2e8bc0, #2978b5);
-  color: #fff;
-}
-.theme-ocean nav a { background: rgba(255,255,255,0.3); color: #fff; }
-.theme-ocean .section { background: rgba(255,255,255,0.1); }
-
-/* Blush */
+/* 3) Blush */
 .theme-blush {
-  background: linear-gradient(135deg, #ffe2e2, #ffafaf);
-  color: #333;
+  background: linear-gradient(135deg,#ffe2e2,#ffafaf);
+  color:#333;
 }
-.theme-blush nav a { background: rgba(255,255,255,0.8); color: #333; }
-.theme-blush .section { background: rgba(255,255,255,0.8); }
+.theme-blush nav a    { background:rgba(255,255,255,0.8); color:#333 }
+.theme-blush .section { background:rgba(255,255,255,0.8) }
