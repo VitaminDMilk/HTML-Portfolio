@@ -9,7 +9,7 @@ const content = {
       download:'Download Resume'
     },
     name:'Wei (David) Dai',
-    tagline:'Aspiring Embedded & AI Engineer',
+    tagline:'Currently a sophomore',
     sections:{
       education: `
         <h2>Education</h2>
@@ -66,7 +66,7 @@ const content = {
   zh: {
     nav:{ education:'教育', skills:'技能', experience:'经历', projects:'项目', activities:'活动', download:'下载简历' },
     name:'戴维',
-    tagline:'嵌入式与人工智能工程师',
+    tagline:'大二在读中',
     sections:{
       education: `
         <h2>教育</h2>
