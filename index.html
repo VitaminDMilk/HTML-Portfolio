@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- 背景画布 -->
   <canvas id="bgcanvas"></canvas>
 
   <header>
@@ -25,7 +24,7 @@
     <div class="theme-switcher">
       <button onclick="setTheme('day')"    title="Day">🌞</button>
       <button onclick="setTheme('night')"  title="Night">🌜</button>
-      <button onclick="setTheme('ocean')"  title="Ocean">🌊</button>
+      <!-- ocean 模式已删 -->
       <button onclick="setTheme('blush')"  title="Blush">🌸</button>
     </div>
     <div class="language-switcher">
@@ -35,7 +34,7 @@
   </header>
 
   <main>
-    <!-- 保持这几个空占位，脚本会填充它们 -->
+    <!-- 只留这几个空占位，脚本会动态填充内容 -->
     <section id="education" class="section reveal"></section>
     <section id="skills"    class="section reveal"></section>
     <section id="experience"class="section reveal"></section>
