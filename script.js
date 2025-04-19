@@ -1,17 +1,16 @@
-// 多语言 & 内容
 const content = {
   en: {
     nav: {
-      education: 'Education',
-      skills:    'Skills',
+      education:'Education',
+      skills:'Skills',
       experience:'Experience',
-      projects:  'Projects',
+      projects:'Projects',
       activities:'Activities',
-      download:  'Download Resume'
+      download:'Download Resume'
     },
-    name:    'Wei (David) Dai',
+    name:'Wei (David) Dai',
     tagline:'Aspiring Embedded & AI Engineer',
-    sections: {
+    sections:{
       education: `
         <h2>Education</h2>
         <div>
@@ -65,25 +64,18 @@ const content = {
     }
   },
   zh: {
-    nav: {
-      education: '教育',
-      skills:    '技能',
-      experience:'经历',
-      projects:  '项目',
-      activities:'活动',
-      download:  '下载简历'
-    },
-    name:    '戴维',
+    nav:{ education:'教育', skills:'技能', experience:'经历', projects:'项目', activities:'活动', download:'下载简历' },
+    name:'戴维',
     tagline:'嵌入式与人工智能工程师',
-    sections: {
+    sections:{
       education: `
         <h2>教育</h2>
         <div>
-          <strong>普渡大学韦恩堡分校 2023年8月 – 2027年5月</strong>
+          <strong>普渡大学韦恩堡分校 2023年8月 – 2027年5月</strong>
           <p>主修：计算机工程 · 辅修：计算机科学 · GPA 3.65/4.0 · 荣誉名单</p>
         </div>
         <div>
-          <strong>怀俄明中学 2020年8月 – 2023年5月</strong>
+          <strong>怀俄明中学 2020年8月 – 2023年5月</strong>
           <p>高中毕业 · GPA 3.65/4.0</p>
         </div>`,
       skills: `
@@ -91,7 +83,7 @@ const content = {
         <p>
           <strong>编程语言：</strong>Java, Python, C++, JavaFX, SceneBuilder, HTML, CSS<br/>
           <strong>工具：</strong>Unity, AutoCAD, MATLAB, Arduino<br/>
-          <strong>语言：</strong>中文（母语）、英文（托福 101分）、西班牙语（中级）
+          <strong>语言：</strong>中文（母语）、英文（托福 101）、西班牙语（中级）
         </p>`,
       experience: `
         <h2>实习与工作经历</h2>
@@ -130,145 +122,125 @@ const content = {
   }
 };
 
-// 切换语言
 function setLanguage(lang) {
   document.getElementById('name').textContent    = content[lang].name;
   document.getElementById('tagline').textContent = content[lang].tagline;
-  // 更新导航
   document.querySelectorAll('.nav-link[data-section]').forEach(el => {
     el.textContent = content[lang].nav[el.dataset.section];
   });
-  // 填充各区块
   for (let sec in content[lang].sections) {
     document.getElementById(sec).innerHTML = content[lang].sections[sec];
   }
-  // 页脚
   document.getElementById('footer-name').textContent = content[lang].name;
-  const emailEl = document.getElementById('footer-email');
-  emailEl.textContent = 'david0322v@gmail.com';
-  emailEl.href = 'mailto:david0322v@gmail.com';
+  const e = document.getElementById('footer-email');
+  e.textContent = 'david0322v@gmail.com';
+  e.href = 'mailto:david0322v@gmail.com';
 }
 
-// 切换主题 & 初始化背景
 function setTheme(theme) {
   document.body.className = 'theme-' + theme;
   initBackground(theme);
 }
 
-// 背景特效：气泡 / 星空 / 樱花瓣
 function initBackground(theme) {
-  const canvas = document.getElementById('bgcanvas');
-  const ctx    = canvas.getContext('2d');
-  cancelAnimationFrame(canvas._anim);
-  canvas.width  = innerWidth;
-  canvas.height = innerHeight;
+  const c = document.getElementById('bgcanvas');
+  const ctx = c.getContext('2d');
+  cancelAnimationFrame(c._anim);
+  c.width = innerWidth; c.height = innerHeight;
 
-  let items = [];
-  const count = 80;
-
-  if (theme === 'night') {
-    // 星空
-    for (let i=0; i<count; i++) {
+  let items = [], count;
+  if (theme==='night') {
+    count = 200;
+    for (let i=0;i<count;i++){
       items.push({
-        x: Math.random()*canvas.width,
-        y: Math.random()*canvas.height,
-        size: Math.random()*2 + 1,
-        blink: Math.random()*0.05 + 0.02,
-        alpha: Math.random()
+        x:Math.random()*c.width,
+        y:Math.random()*c.height,
+        size:Math.random()*2+1,
+        blink:Math.random()*0.05+0.02,
+        alpha:Math.random()
       });
     }
-  } else if (theme === 'blush') {
-    // 飘落花瓣
-    for (let i=0; i<count; i++) {
+  } else if (theme==='blush') {
+    count = 100;
+    for (let i=0;i<count;i++){
       items.push({
-        x: Math.random()*canvas.width,
-        y: Math.random()*canvas.height,
-        r: Math.random()*10 + 5,
-        vx: Math.random()*0.5 - 0.25,
-        vy: Math.random()*1 + 0.5,
-        alpha: Math.random()*0.5 + 0.3
+        x:Math.random()*c.width,
+        y:Math.random()*c.height,
+        img:new Image(),
+        vx:Math.random()*0.5-0.25,
+        vy:Math.random()*1+0.5,
+        angle:Math.random()*2*Math.PI,
+        rot:Math.random()*0.02-0.01,
+        size:20+Math.random()*20
       });
+      items[i].img.src = 'petal.png';
     }
   } else {
-    // 日间气泡
-    for (let i=0; i<count; i++) {
+    count = 80;
+    for (let i=0;i<count;i++){
       items.push({
-        x: Math.random()*canvas.width,
-        y: Math.random()*canvas.height,
-        r: 10 + Math.random()*40,
-        vx: (Math.random()-0.5)*0.5,
-        vy: (Math.random()-0.5)*0.5
+        x:Math.random()*c.width,
+        y:Math.random()*c.height,
+        r:10+Math.random()*40,
+        vx:(Math.random()-0.5)*0.5,
+        vy:(Math.random()-0.5)*0.5
       });
     }
   }
 
   function draw() {
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-
-    if (theme === 'night') {
-      ctx.fillStyle = '#fff';
-      items.forEach(s => {
-        s.alpha += s.blink * (Math.random()>0.5?1:-1);
-        s.alpha = Math.max(0,Math.min(1,s.alpha));
-        ctx.globalAlpha = s.alpha;
-        ctx.fillRect(s.x, s.y, s.size, s.size);
+    ctx.clearRect(0,0,c.width,c.height);
+    if (theme==='night') {
+      ctx.fillStyle='#fff';
+      items.forEach(s=>{
+        s.alpha+=s.blink*(Math.random()>0.5?1:-1);
+        s.alpha=Math.max(0,Math.min(1,s.alpha));
+        ctx.globalAlpha=s.alpha;
+        ctx.fillRect(s.x,s.y,s.size,s.size);
       });
-      ctx.globalAlpha = 1;
+      ctx.globalAlpha=1;
     }
-    else if (theme === 'blush') {
-      ctx.fillStyle = 'rgba(255,182,193,';
-      items.forEach(p => {
+    else if(theme==='blush'){
+      items.forEach(p=>{
+        ctx.save();
+        ctx.globalAlpha=0.8;
+        ctx.translate(p.x,p.y);
+        ctx.rotate(p.angle);
+        ctx.drawImage(p.img,-p.size/2,-p.size/2,p.size,p.size);
+        ctx.restore();
+        p.x+=p.vx; p.y+=p.vy; p.angle+=p.rot;
+        if(p.y>c.height) p.y=-p.size;
+        if(p.x>c.width) p.x=-p.size;
+        if(p.x<-p.size) p.x=c.width+p.size;
+      });
+    } else {
+      ctx.fillStyle='rgba(100,149,237,0.3)';
+      items.forEach(b=>{
         ctx.beginPath();
-        ctx.globalAlpha = p.alpha;
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
+        ctx.arc(b.x,b.y,b.r,0,2*Math.PI);
         ctx.fill();
-        p.x += p.vx;
-        p.y += p.vy;
-        if (p.y - p.r > canvas.height) p.y = -p.r;
-        if (p.x - p.r > canvas.width)  p.x = -p.r;
-        if (p.x + p.r < 0)             p.x = canvas.width + p.r;
-      });
-      ctx.globalAlpha = 1;
-    }
-    else {
-      ctx.fillStyle = 'rgba(100,149,237,0.3)';
-      items.forEach(b => {
-        ctx.beginPath();
-        ctx.arc(b.x,b.y,b.r,0,Math.PI*2);
-        ctx.fill();
-        b.x += b.vx; b.y += b.vy;
-        if (b.x - b.r > canvas.width)  b.x = -b.r;
-        if (b.x + b.r < 0)             b.x = canvas.width + b.r;
-        if (b.y - b.r > canvas.height) b.y = -b.r;
-        if (b.y + b.r < 0)             b.y = canvas.height + b.r;
+        b.x+=b.vx; b.y+=b.vy;
+        if(b.x-b.r>c.width)b.x=-b.r;
+        if(b.x+b.r<0)b.x=c.width+b.r;
+        if(b.y-b.r>c.height)b.y=-b.r;
+        if(b.y+b.r<0)b.y=c.height+b.r;
       });
     }
-
-    canvas._anim = requestAnimationFrame(draw);
+    c._anim = requestAnimationFrame(draw);
   }
   draw();
 }
 
-// 初始化
-window.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('DOMContentLoaded',()=>{
   setLanguage('en');
   setTheme('day');
-
-  // ScrollReveal
-  ScrollReveal().reveal('.reveal', {
-    distance:'40px', duration:800, easing:'ease-in-out',
-    origin:'bottom', interval:200
-  });
-
-  // 主题切换
+  ScrollReveal().reveal('.reveal',{distance:'40px',duration:800,easing:'ease-in-out',origin:'bottom',interval:200});
   document.querySelectorAll('.theme-switcher button')
-    .forEach(btn => btn.addEventListener('click', () => setTheme(btn.dataset.theme)));
-  // 语言切换
+    .forEach(b=>b.addEventListener('click',()=>setTheme(b.dataset.theme)));
   document.querySelectorAll('.language-switcher button')
-    .forEach(btn => btn.addEventListener('click', () => setLanguage(btn.dataset.lang)));
-  // 窗口改变时重绘
-  window.addEventListener('resize', () => {
-    const current = document.body.className.split('-')[1];
-    initBackground(current);
+    .forEach(b=>b.addEventListener('click',()=>setLanguage(b.dataset.lang)));
+  window.addEventListener('resize',()=>{
+    const t=document.body.className.split('-')[1];
+    initBackground(t);
   });
 });
