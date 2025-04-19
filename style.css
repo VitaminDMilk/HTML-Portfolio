@@ -1,9 +1,8 @@
-/* ========== 全局 ========== */
+/* —— 全局 & 布局 —— */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   transition: background 0.5s, color 0.5s;
-  position: relative;
   overflow-x: hidden;
 }
 header, footer { text-align: center; padding: 1rem; }
@@ -13,8 +12,9 @@ nav a {
   color: inherit;
   font-size: 1rem;
 }
-.language-switcher,
-.theme-switcher { margin: .5rem; }
+.theme-switcher, .language-switcher {
+  margin: .5rem;
+}
 .theme-switcher button,
 .language-switcher button {
   margin: 0 .25rem;
@@ -29,7 +29,7 @@ nav a {
   outline: 2px solid #333;
 }
 
-/* 把内容区水平居中，内部文字左对齐 */
+/* 内容区水平居中，内部左对齐，字体放大 */
 main {
   max-width: 700px;
   margin: 2rem auto;
@@ -37,19 +37,17 @@ main {
 .section {
   background: rgba(255,255,255,.9);
   margin: 1rem 0;
-  padding: 1rem 1.2rem;
+  padding: 1.2rem;
   border-radius: 8px;
   text-align: left;
   font-size: 1.1rem;
   line-height: 1.5;
 }
-
-/* ========== ScrollReveal 默认样式 ========== */
 .reveal { opacity: 0; }
 
-/* ========== 主题色 & 背景动画 ========== */
+/* —— 各主题 背景 & 动画 —— */
 
-/* ——— 日间  ——— */
+/* 日间 */
 .theme-day {
   background: linear-gradient(135deg, #d0e8ff, #f0f8ff);
 }
@@ -57,9 +55,9 @@ main {
   position: fixed; top:0; left:0; width:100%; height:100%; z-index:-1;
 }
 .theme-day .bubble {
-  background: rgba(173, 216, 230, .6);
-  border-radius: 50%;
   position: absolute;
+  border-radius: 50%;
+  background: rgba(173,216,230,0.6);
   animation: bubbleMove 15s linear infinite;
 }
 @keyframes bubbleMove {
@@ -68,7 +66,7 @@ main {
   100% { transform: translateY(-20vh) scale(1); }
 }
 
-/* ——— 夜间  ——— */
+/* 夜间 */
 .theme-night {
   background: #0b0f1a;
   color: #ddd;
@@ -76,15 +74,39 @@ main {
 .theme-night canvas {
   position: fixed; top:0; left:0; width:100%; height:100%; z-index:-1;
 }
+.theme-night .star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  animation: starTwinkle 2s infinite ease-in-out;
+}
 @keyframes starTwinkle {
   0%,100% { opacity: .2; }
   50%      { opacity: 1; }
 }
 
-/* ——— 海蓝（已删）  ——— */
-/* 不再使用 */
+/* 海洋（蓝色）*/
+.theme-blue {
+  background: linear-gradient(135deg, #a0d8f1, #63b8e3);
+  color: #fff;
+}
+.theme-blue canvas {
+  position: fixed; top:0; left:0; width:100%; height:100%; z-index:-1;
+}
+.theme-blue .wave {
+  position: absolute;
+  width: 200px; height: 200px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 50%;
+  animation: wavePulse 3s infinite ease-in-out;
+}
+@keyframes wavePulse {
+  0% { transform: scale(0.8); opacity: .5; }
+  50% { transform: scale(1.2); opacity: .2; }
+  100% { transform: scale(0.8); opacity: .5; }
+}
 
-/* ——— 樱花  ——— */
+/* 樱花（粉色）*/
 .theme-pink {
   background: linear-gradient(135deg, #ffe4ec, #fff0f5);
   color: #333;
@@ -92,7 +114,7 @@ main {
 .theme-pink canvas {
   position: fixed; top:0; left:0; width:100%; height:100%; z-index:-1;
 }
-.petal {
+.theme-pink .petal {
   position: absolute;
   background: url('https://i.imgur.com/Nv2QK4Y.png') no-repeat center / contain;
   animation: petalFall 8s linear infinite;
