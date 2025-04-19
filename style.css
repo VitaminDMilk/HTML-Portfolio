@@ -1,123 +1,87 @@
-/* —— 基础不变 —— */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body {
-  font-family: 'Inter', sans-serif;
-  overflow-x: hidden;
-  transition: background 0.8s, color 0.8s;
-  position: relative;
-  line-height: 1.6;
+html, body { width: 100%; height: 100%; font-family: 'Poppins', sans-serif; }
+
+/* 背景 Canvas */
+#bgcanvas {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  z-index: -1;
 }
-canvas#bgcanvas {
-  position: fixed; top: 0; left: 0;
-  width: 100%; height: 100%; z-index: -1;
-}
-header, footer { text-align: center; padding: 1rem; }
-h1 { font-weight: 700; font-size: 2rem; margin-bottom: .2rem; }
-p#tagline { font-weight: 400; margin-bottom: .8rem; }
-nav { margin-bottom: .8rem; }
+
+body { transition: background 0.5s, color 0.5s; text-align: center; }
+
+/* 头部 & 导航 */
+header { padding: 2rem 1rem; }
+header h1 { font-size: 2.2rem; font-weight: 600; margin-bottom: 0.3rem; }
+header p { font-weight: 300; color: #555; margin-bottom: 1rem; }
+
+nav { margin-bottom: 1rem; }
 nav a {
-  margin: 0 .5rem; text-decoration: none;
-  font-weight: 600; padding: .3rem .6rem;
-  border-radius: 4px; transition: background .3s;
+  display: inline-block; margin: 0 0.5rem; padding: 0.5rem 1rem;
+  border-radius: 6px; text-decoration: none; font-weight: 500;
+  backdrop-filter: blur(6px);
 }
-nav a:hover { background: rgba(255,255,255,0.2); }
-.theme-switcher, .language-switcher {
-  margin-bottom: .8rem;
-}
+
+/* 切主题 & 切语言 按钮 */
 .theme-switcher button,
 .language-switcher button {
-  margin: 0 4px; padding: 6px 10px;
-  border: none; border-radius: 4px; cursor: pointer;
-  transition: transform .2s;
+  margin: 0 0.3rem; padding: 0.4rem; border: none; border-radius: 6px;
+  cursor: pointer; backdrop-filter: blur(6px);
 }
-.theme-switcher button:hover,
-.language-switcher button:hover {
-  transform: scale(1.1);
-}
-main {
-  max-width: 800px; margin: 0 auto; padding: 1rem 0;
-}
+
+/* 主要内容区 */
+main { padding: 1rem; }
 .section {
-  backdrop-filter: blur(6px);
-  border-radius: 8px; margin-bottom: 1.5rem;
-  padding: 1.5rem; text-align: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  max-width: 720px; margin: 1rem auto; padding: 1.5rem;
+  border-radius: 10px; text-align: center; backdrop-filter: blur(8px);
 }
 .section h2 {
-  margin-bottom: 1rem;
-  font-size: 1.5rem; font-weight: 600;
-  position: relative;
+  margin-bottom: 0.8rem; font-weight: 600; font-size: 1.5rem;
+  border-bottom: 2px solid currentColor; display: inline-block;
+  padding-bottom: 0.3rem;
 }
-.section h2::after {
-  content: ''; display: block;
-  width: 50px; height: 3px;
-  background: currentColor;
-  margin: 8px auto 16px;
+.section div, .section p, .section ul {
+  margin-top: 0.8rem; line-height: 1.6;
 }
+.section ul { list-style: none; padding-left: 0; }
+.section ul li::before { content: '•'; margin-right: 0.5rem; }
 
-/* —— 1. Day 模式 —— */
+/* 页脚 */
+footer { padding: 2rem 1rem; font-size: 0.9rem; color: #555; }
+footer a { text-decoration: none; color: inherit; }
+
+/* ========= 四套主题 ========= */
+
+/* 1) 白天 Day */
 .theme-day {
-  background: #eef2f7; color: #334;
+  background: linear-gradient(135deg, #e0f2f7, #f7fbff);
+  color: #333;
 }
-.theme-day nav a { background: rgba(255,255,255,0.6); color: #334; }
-.theme-day .theme-switcher button,
-.theme-day .language-switcher button {
-  background: rgba(255,255,255,0.8); color: #334;
-}
-.theme-day .section {
-  background: rgba(255,255,255,0.8); color: #334;
-}
+.theme-day nav a { background: rgba(255,255,255,0.7); color: #333; }
+.theme-day .section { background: rgba(255,255,255,0.8); }
 
-/* —— 2. Night 模式 —— */
+/* 2) 黑夜 Night */
 .theme-night {
-  background: #090b13; color: #ccc;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #eee;
 }
-.theme-night nav a { background: rgba(255,255,255,0.1); color: #8ab4f8; }
-.theme-night .theme-switcher button,
-.theme-night .language-switcher button {
-  background: rgba(0,0,0,0.5); color: #8ab4f8;
-}
-.theme-night .section {
-  background: rgba(20,20,30,0.6); color: #ddd;
-}
+.theme-night nav a { background: rgba(0,0,0,0.6); color: #eee; }
+.theme-night .section { background: rgba(20,20,20,0.7); }
 
-/* —— 3. Galaxy → 改成蓝色系 —— */
-.theme-galaxy {
-  background: linear-gradient(135deg, #001f3f, #005f99);
+/* 3) 海洋 Ocean */
+.theme-ocean {
+  background: linear-gradient(135deg, #2e8bc0, #2978b5);
   color: #fff;
 }
-.theme-galaxy nav a {
-  background: rgba(255,255,255,0.1);
-  color: #7FDBFF;
-}
-.theme-galaxy .theme-switcher button,
-.theme-galaxy .language-switcher button {
-  background: rgba(255,255,255,0.2);
-  color: #7FDBFF;
-}
-.theme-galaxy .section {
-  background: rgba(0,40,80,0.6);
-  color: #fff;
-}
-/* 纯用脚本画布，无 CSS 动画 */
-.theme-galaxy canvas#bgcanvas { background: none; }
+.theme-ocean nav a { background: rgba(255,255,255,0.3); color: #fff; }
+.theme-ocean .section { background: rgba(255,255,255,0.1); }
 
-/* —— 4. Cyberpunk → 改成淡粉色 —— */
-.theme-cyberpunk {
-  background: linear-gradient(135deg, #ffe4e1, #ff9ca3);
+/* 4) 樱花 Blush */
+.theme-blush {
+  background: linear-gradient(135deg, #ffe2e2, #ffafaf);
   color: #333;
 }
-.theme-cyberpunk nav a {
-  background: rgba(255,255,255,0.5);
-  color: #d6336c;
-}
-.theme-cyberpunk .theme-switcher button,
-.theme-cyberpunk .language-switcher button {
-  background: rgba(255,255,255,0.7);
-  color: #d6336c;
-}
-.theme-cyberpunk .section {
-  background: rgba(255,255,255,0.8);
-  color: #333;
-}
-.theme-cyberpunk canvas#bgcanvas { background: none; }
+.theme-blush nav a { background: rgba(255,255,255,0.8); color: #333; }
+.theme-blush .section { background: rgba(255,255,255,0.8); }
+
