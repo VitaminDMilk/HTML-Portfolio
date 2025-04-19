@@ -1,18 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-
-* { box-sizing: border-box; margin:0; padding:0 }
+* { box-sizing:border-box; margin:0; padding:0 }
 html, body { width:100%; height:100%; font-family:'Poppins',sans-serif }
-body { transition: background 0.5s, color 0.5s; text-align:center; }
+body { transition:background .5s,color .5s; text-align:center }
+#bgcanvas { position:fixed; top:0; left:0; width:100%; height:100%; z-index:-1 }
 
-/* 背景 Canvas */
-#bgcanvas {
-  position:fixed; top:0; left:0; width:100%; height:100%; z-index:-1;
-}
-
-/* Header & Nav */
 header { padding:2rem 1rem }
 header h1 { font-size:2.2rem; font-weight:600; margin-bottom:.3rem }
-header p  { font-weight:300; color:#555; margin-bottom:1rem }
+header p { font-weight:300; color:#555; margin-bottom:1rem }
 
 nav { margin-bottom:1rem }
 nav a {
@@ -21,14 +15,12 @@ nav a {
   backdrop-filter:blur(6px);
 }
 
-/* Theme & Language Switchers */
 .theme-switcher button,
 .language-switcher button {
   margin:0 .3rem; padding:.4rem; border:none; border-radius:6px;
   cursor:pointer; backdrop-filter:blur(6px);
 }
 
-/* Sections */
 main { padding:1rem }
 .section {
   max-width:720px; margin:1rem auto; padding:1.5rem;
@@ -43,31 +35,30 @@ main { padding:1rem }
 .section ul { list-style:none; padding-left:0 }
 .section ul li::before { content:'•'; margin-right:.5rem }
 
-/* Footer */
 footer { padding:2rem 1rem; font-size:.9rem; color:#555 }
 footer a { text-decoration:none; color:inherit }
 
-/* ———— Themes ———— */
-/* 1) Day */
+/* Themes */
+/* Day */
 .theme-day {
-  background: linear-gradient(135deg,#e0f2f7,#f7fbff);
+  background:linear-gradient(135deg,#e0f2f7,#f7fbff);
   color:#333;
 }
-.theme-day nav a    { background:rgba(255,255,255,0.7); color:#333 }
-.theme-day .section { background:rgba(255,255,255,0.8) }
+.theme-day nav a    { background:rgba(255,255,255,.7); color:#333 }
+.theme-day .section { background:rgba(255,255,255,.8) }
 
-/* 2) Night */
+/* Night */
 .theme-night {
-  background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
   color:#eee;
 }
-.theme-night nav a    { background:rgba(0,0,0,0.6); color:#eee }
-.theme-night .section { background:rgba(20,20,20,0.7) }
+.theme-night nav a    { background:rgba(0,0,0,.6); color:#eee }
+.theme-night .section { background:rgba(20,20,20,.7) }
 
-/* 3) Blush */
+/* Blush */
 .theme-blush {
-  background: linear-gradient(135deg,#ffe2e2,#ffafaf);
+  background:linear-gradient(135deg,#ffe2e2,#ffafaf);
   color:#333;
 }
-.theme-blush nav a    { background:rgba(255,255,255,0.8); color:#333 }
-.theme-blush .section { background:rgba(255,255,255,0.8) }
+.theme-blush nav a    { background:rgba(255,255,255,.8); color:#333 }
+.theme-blush .section { background:rgba(255,255,255,.8) }
