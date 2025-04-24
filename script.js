@@ -42,11 +42,12 @@ const content = {
         <h2>Projects</h2>
         <div>
           <strong>Black Jack Simulator</strong>
-          <p>JavaFX GUI Blackjack game featuring OOP, UML, event-driven logic, custom styling.</p>
+          <p>A JavaFX-based Blackjack game where players compete against a computerized dealer to achieve a hand value closest to 21. The project showcases event-driven programming, GUI interactions, class inheritance, UML diagramming, structured game logic, and custom styling features.
+.</p>
         </div>
         <div>
-          <strong>Auto Loan Calculator</strong>
-          <p>JavaFX GUI app to compute loan payments based on price, tax rate, and financing details.</p>
+          <strong>Bank Simulator</strong>
+          <p>a JavaFX GUI application for calculating monthly car loan payments based on price, taxes, and financing inputs, alongside a console-based banking system supporting account operations like deposits, withdrawals, and loan applications. The project covers GUI design, event-driven programming, financial formulas, decision structures, loops, ArrayLists, file output, and custom styling.</p>
         </div>
         <div>
           <strong>Arduino-Based Control & Monitoring App</strong>
@@ -114,11 +115,11 @@ const content = {
         <h2>项目</h2>
         <div>
           <strong>二十一点游戏模拟器</strong>
-          <p>使用 JavaFX 构建图形界面游戏，应用 OOP、UML、事件驱动逻辑和自定义样式。</p>
+          <p>一个基于 JavaFX 的二十一点纸牌游戏，玩家与计算机发牌员对战，目标是使手牌总点数尽可能接近 21。项目展示了事件驱动编程、图形界面交互、类继承结构、UML 类图设计、游戏逻辑实现和自定义界面样式。</p>
         </div>
         <div>
           <strong>汽车贷款计算器</strong>
-          <p>JavaFX GUI 应用，根据车辆价格、税率和融资详情计算月供。</p>
+          <p>该项目包含一个基于 JavaFX 的图形界面贷款计算器，可根据车辆价格、税率及融资信息计算月供，以及一个控制台银行系统，支持余额查询、存取款、贷款申请等功能。项目涵盖图形界面设计、事件驱动编程、金融计算、决策结构、循环、数组列表、文件输出与界面样式定制。</p>
         </div>
         <div>
           <strong>基于 Arduino 的控制与监控应用</strong>
