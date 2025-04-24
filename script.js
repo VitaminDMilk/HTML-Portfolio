@@ -50,16 +50,16 @@ const content = {
           <p>a JavaFX GUI application for calculating monthly car loan payments based on price, taxes, and financing inputs, alongside a console-based banking system supporting account operations like deposits, withdrawals, and loan applications. The project covers GUI design, event-driven programming, financial formulas, decision structures, loops, ArrayLists, file output, and custom styling.</p>
         </div>
         <div>
-          <strong>Arduino-Based Control & Monitoring App</strong>
-          <p>This MATLAB App Designer project interfaces with a PEEB (Portable Experimental Embedded Board) using an Arduino Uno to control and monitor electronic modules. The GUI supports LED activation, servo angle adjustment, buzzer toggling, and LDR-based light detection with live plotting. The project involves: Graphical User Interface (GUI), Hardware Communication via Arduino, Timer-Based Polling, Event-Driven Programming, and Real-Time Data Visualization.</p>
+          <strong>MATLAB–Arduino Embedded Control Panel</strong>
+          <p>A MATLAB App Designer project that connects to a PEEB via Arduino Uno to control and monitor components like LEDs, servos, buzzers, and LDRs. Features GUI interaction, timer-based polling, and real-time data visualization.</p>
         </div>
         <div>
           <strong>HarmonyOS To-Do List App</strong>
-          <p>A lightweight to-do list application built using ArkTS and Huawei DevEco Studio for HarmonyOS devices. This project demonstrates the use of component-based UI architecture, state management with @State, and conditional rendering for dynamic task interactions. Users can toggle individual tasks as complete/incomplete, with responsive UI feedback through visual icons and text decoration. The app also reflects a strong grasp of ArkTS typing and HarmonyOS development best practices.</p>
+          <p>A lightweight to-do list app built with ArkTS and DevEco Studio for HarmonyOS. Features component-based UI, @State-driven state management, and conditional rendering for dynamic task interactions. Users can toggle tasks as complete or incomplete with responsive visual feedback.</p>
         </div>
         <div>
           <strong>Personal Portfolio Website</strong>
-          <p>My GitHub Pages portfolio showcasing projects, resume, and contact info, implemented with Pug, SCSS, and JavaScript. Features theme switching, multi-language support, and dynamic background animations for a modern presentation.</p>
+          <p>GitHub Pages portfolio showcasing projects, resume, and contact info, implemented with HTML, CSS, and JavaScript. Features theme switching, multi-language support, and dynamic background animations for a modern presentation.</p>
         </div>`,
       activities: `
         <h2>Activities & Competitions</h2>
@@ -118,20 +118,20 @@ const content = {
           <p>一个基于 JavaFX 的二十一点纸牌游戏，玩家与计算机发牌员对战，目标是使手牌总点数尽可能接近 21。项目展示了事件驱动编程、图形界面交互、类继承结构、UML 类图设计、游戏逻辑实现和自定义界面样式。</p>
         </div>
         <div>
-          <strong>汽车贷款计算器</strong>
+          <strong>JAVA简易银行系统</strong>
           <p>该项目包含一个基于 JavaFX 的图形界面贷款计算器，可根据车辆价格、税率及融资信息计算月供，以及一个控制台银行系统，支持余额查询、存取款、贷款申请等功能。项目涵盖图形界面设计、事件驱动编程、金融计算、决策结构、循环、数组列表、文件输出与界面样式定制。</p>
         </div>
         <div>
-          <strong>基于 Arduino 的控制与监控应用</strong>
-          <p>MATLAB App Designer 项目，使用 Arduino Uno 与 PEEB（便携式实验嵌入式板）通信，实现 LED 控制、舵机调节、蜂鸣器切换和 LDR 光强检测并实时绘图，涵盖 GUI、硬件通信、定时轮询、事件驱动编程和实时数据可视化。</p>
+          <strong>MATLAB–Arduino 嵌入式控制面板</strong>
+          <p>基于 MATLAB App Designer 的项目，通过 Arduino Uno 连接 PEEB，实现对 LED、舵机、蜂鸣器和 LDR 的控制与监测。支持图形界面交互、定时轮询和实时数据可视化。</p>
         </div>
         <div>
           <strong>HarmonyOS 待办事项应用</strong>
-          <p>使用 ArkTS 和华为 DevEco Studio 开发的轻量级待办事项应用，展示组件化 UI、@State 状态管理和条件渲染，实现动态任务交互和响应式 UI。</p>
+          <p>使用 ArkTS 和 DevEco Studio 开发的轻量级待办事项应用，适用于 HarmonyOS。支持基于组件的 UI 架构、@State 状态管理以及任务交互的条件渲染，用户可切换任务完成状态，并获得直观的视觉反馈。</p>
         </div>
         <div>
           <strong>个人作品集网站</strong>
-          <p>基于 GitHub Pages 的个人网站，使用 Pug、SCSS 和 JS 实现，支持主题切换、多语言和动态背景动画。</p>
+          <p>基于 GitHub Pages 的个人网站，使用 HTML、CSS 和 JS，支持主题切换、多语言和动态背景动画。</p>
         </div>`,
       activities: `
         <h2>活动与竞赛</h2>
