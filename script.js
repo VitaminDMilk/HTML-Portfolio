@@ -1,24 +1,24 @@
 const content = {
   en: {
     nav: {
-      education:'Education',
-      skills:'Skills',
-      experience:'Experience',
-      projects:'Projects',
-      activities:'Activities',
-      download:'Download Resume'
+      education:  'Education',
+      skills:     'Skills',
+      experience: 'Experience',
+      projects:   'Projects',
+      activities: 'Activities',
+      download:   'Download Resume'
     },
-    name:'Wei (David) Dai',
-    tagline:'Currently a sophomore',
-    sections:{
+    name:    'Wei (David) Dai',
+    tagline: 'Currently a sophomore',
+    sections: {
       education: `
         <h2>Education</h2>
         <div>
-          <strong>Purdue University Fort Wayne  -  2023/08 – 2027/05</strong>
-          <p>Major: Computer Engineering · Minor: Computer Science · GPA 3.65/4.0 · Dean’s List & Honors</p>
+          <strong>Purdue University Fort Wayne 2023/08 – 2027/05</strong>
+          <p>Major: Computer Engineering · Minor: Computer Science · GPA 3.65/4.0 · Dean’s List & Honors</p>
         </div>
         <div>
-          <strong>Wyoming Seminary Prep -  2020/08 – 2023/05</strong>
+          <strong>Wyoming Seminary Prep 2020/08 – 2023/05</strong>
           <p>High School Diploma</p>
         </div>`,
       skills: `
@@ -26,56 +26,71 @@ const content = {
         <p>
           <strong>Programming:</strong> Java, Python, C++, JavaFX, SceneBuilder, HTML, CSS<br/>
           <strong>Tools:</strong> Unity, AutoCAD, MATLAB, Arduino<br/>
-          <strong>Languages:</strong> Chinese (Native), English (TOEFL 101), Spanish (Intermediate)
+          <strong>Languages:</strong> Chinese (Native), English (TOEFL 101), Spanish (Intermediate)
         </p>`,
       experience: `
         <h2>Internships & Work Experience</h2>
         <div>
-          <strong>Utopilot Internship – SAIC Summer 2024</strong>
-          <p>Worked on perception for autonomous vehicles · Point‑cloud & OCC visual conversion.</p>
+          <strong>Utopilot Internship – SAIC Summer 2024</strong>
+          <p>Worked on perception for autonomous vehicles · Point-cloud & OCC visual conversion.</p>
         </div>
         <div>
-          <strong>IT Helpdesk – Purdue Fort Wayne 2024‑2025</strong>
-          <p>Front‑line tech support · Managed loaner laptops · Troubleshooting & escalation.</p>
+          <strong>IT Helpdesk – Purdue Fort Wayne 2024-2025</strong>
+          <p>Front-line tech support · Managed loaner laptops · Troubleshooting & escalation.</p>
         </div>`,
       projects: `
         <h2>Projects</h2>
         <div>
-          <strong>Black Jack Simulator</strong>
-          <p>JavaFX GUI Blackjack game featuring OOP, UML, event‑driven logic, custom styling.</p>
+          <strong>Black Jack Simulator</strong>
+          <p>JavaFX GUI Blackjack game featuring OOP, UML, event-driven logic, custom styling.</p>
         </div>
         <div>
           <strong>Auto Loan Calculator</strong>
           <p>JavaFX GUI app to compute loan payments based on price, tax rate, and financing details.</p>
         </div>
         <div>
-          <strong>Bank Simulator</strong>
-          <p>Console‑based Java app for checking balances, deposits, and loan requests.</p>
+          <strong>Arduino-Based Control & Monitoring App</strong>
+          <p>This MATLAB App Designer project interfaces with a PEEB (Portable Experimental Embedded Board) using an Arduino Uno to control and monitor electronic modules. The GUI supports LED activation, servo angle adjustment, buzzer toggling, and LDR-based light detection with live plotting. The project involves: Graphical User Interface (GUI), Hardware Communication via Arduino, Timer-Based Polling, Event-Driven Programming, and Real-Time Data Visualization.</p>
+        </div>
+        <div>
+          <strong>HarmonyOS To-Do List App</strong>
+          <p>A lightweight to-do list application built using ArkTS and Huawei DevEco Studio for HarmonyOS devices. This project demonstrates the use of component-based UI architecture, state management with @State, and conditional rendering for dynamic task interactions. Users can toggle individual tasks as complete/incomplete, with responsive UI feedback through visual icons and text decoration. The app also reflects a strong grasp of ArkTS typing and HarmonyOS development best practices.</p>
+        </div>
+        <div>
+          <strong>Personal Portfolio Website</strong>
+          <p>My GitHub Pages portfolio showcasing projects, resume, and contact info, implemented with Pug, SCSS, and JavaScript. Features theme switching, multi-language support, and dynamic background animations for a modern presentation.</p>
         </div>`,
       activities: `
         <h2>Activities & Competitions</h2>
         <ul>
-          <li>IEEE Xtreme 2023–2024: Team leader; placed Top 50.</li>
-          <li>National Cyber League 2023–2024</li>
-          <li>Global Game Jam 2024</li>
-          <li>Community Service 2018–2021</li>
-          <li>Varsity Cross Country & Swim 2021–2023</li>
+          <li>IEEE Xtreme 2023–2024: Team leader; placed Top 50.</li>
+          <li>National Cyber League 2023–2024</li>
+          <li>Global Game Jam 2024</li>
+          <li>Community Service 2018–2021</li>
+          <li>Varsity Cross Country & Swim 2021–2023</li>
         </ul>`
     }
   },
   zh: {
-    nav:{ education:'教育', skills:'技能', experience:'经历', projects:'项目', activities:'活动', download:'下载简历' },
-    name:'戴维',
-    tagline:'大二在读中',
-    sections:{
+    nav: {
+      education:  '教育',
+      skills:     '技能',
+      experience: '经历',
+      projects:   '项目',
+      activities: '活动',
+      download:   '下载简历'
+    },
+    name:    '戴维',
+    tagline: '大二在读中',
+    sections: {
       education: `
         <h2>教育</h2>
         <div>
-          <strong>普渡大学韦恩堡分校  -  2023年8月 – 2027年5月</strong>
-          <p>主修：计算机工程 · 辅修：计算机科学 · GPA 3.65/4.0 · 荣誉名单</p>
+          <strong>普渡大学韦恩堡分校 2023年8月 – 2027年5月</strong>
+          <p>主修：计算机工程 · 辅修：计算机科学 · GPA 3.65/4.0 · 荣誉名单</p>
         </div>
         <div>
-          <strong>怀俄明中学  -  2020年8月 – 2023年5月</strong>
+          <strong>怀俄明中学 2020年8月 – 2023年5月</strong>
           <p>高中毕业</p>
         </div>`,
       skills: `
@@ -83,40 +98,48 @@ const content = {
         <p>
           <strong>编程语言：</strong>Java, Python, C++, JavaFX, SceneBuilder, HTML, CSS<br/>
           <strong>工具：</strong>Unity, AutoCAD, MATLAB, Arduino<br/>
-          <strong>语言：</strong>中文（母语）、英文（托福 101）、西班牙语（中级）
+          <strong>语言：</strong>中文（母语）、英文（托福 101）、西班牙语（中级）
         </p>`,
       experience: `
         <h2>实习与工作经历</h2>
         <div>
-          <strong>自动驾驶实习 – 上汽集团 2024年夏</strong>
-          <p>参与点云与 OCC 图像转换的自动驾驶感知项目。</p>
+          <strong>自动驾驶实习 – 上汽集团 2024年夏</strong>
+          <p>参与点云与 OCC 图像转换的自动驾驶感知项目。</p>
         </div>
         <div>
-          <strong>IT技术支持 – 普渡大学韦恩堡分校 2024–2025</strong>
+          <strong>IT技术支持 – 普渡大学韦恩堡分校 2024–2025</strong>
           <p>一线技术支持 · 笔记本管理 · 故障排查与升级。</p>
         </div>`,
       projects: `
         <h2>项目</h2>
         <div>
           <strong>二十一点游戏模拟器</strong>
-          <p>使用 JavaFX 构建图形界面游戏，应用 OOP、UML、事件驱动逻辑。</p>
+          <p>使用 JavaFX 构建图形界面游戏，应用 OOP、UML、事件驱动逻辑和自定义样式。</p>
         </div>
         <div>
           <strong>汽车贷款计算器</strong>
-          <p>JavaFX GUI 应用，根据价格、税率和融资详情计算月供。</p>
+          <p>JavaFX GUI 应用，根据车辆价格、税率和融资详情计算月供。</p>
         </div>
         <div>
-          <strong>银行模拟器</strong>
-          <p>基于控制台的 Java 应用，用于检查余额、存款和贷款请求。</p>
+          <strong>基于 Arduino 的控制与监控应用</strong>
+          <p>MATLAB App Designer 项目，使用 Arduino Uno 与 PEEB（便携式实验嵌入式板）通信，实现 LED 控制、舵机调节、蜂鸣器切换和 LDR 光强检测并实时绘图，涵盖 GUI、硬件通信、定时轮询、事件驱动编程和实时数据可视化。</p>
+        </div>
+        <div>
+          <strong>HarmonyOS 待办事项应用</strong>
+          <p>使用 ArkTS 和华为 DevEco Studio 开发的轻量级待办事项应用，展示组件化 UI、@State 状态管理和条件渲染，实现动态任务交互和响应式 UI。</p>
+        </div>
+        <div>
+          <strong>个人作品集网站</strong>
+          <p>基于 GitHub Pages 的个人网站，使用 Pug、SCSS 和 JS 实现，支持主题切换、多语言和动态背景动画。</p>
         </div>`,
       activities: `
         <h2>活动与竞赛</h2>
         <ul>
-          <li>IEEE Xtreme 编程竞赛 (2023–2024)</li>
-          <li>全国网络联盟赛 (2023–2024)</li>
-          <li>全球游戏创作节 (2024)</li>
-          <li>社区志愿服务 (2018–2021)</li>
-          <li>越野与游泳校队 (2021–2023)</li>
+          <li>IEEE Xtreme 编程竞赛（2023–2024）</li>
+          <li>全国网络联盟赛（2023–2024）</li>
+          <li>全球游戏创作节（2024）</li>
+          <li>社区志愿服务（2018–2021）</li>
+          <li>越野跑与游泳校队（2021–2023）</li>
         </ul>`
     }
   }
