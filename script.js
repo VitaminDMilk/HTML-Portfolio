@@ -24,8 +24,8 @@ const content = {
       skills: `
         <h2>Skills</h2>
         <p>
-          <strong>Programming:</strong> Java, Python, C++, JavaFX, SceneBuilder, HTML, CSS<br/>
-          <strong>Tools:</strong> Unity, AutoCAD, MATLAB, Arduino<br/>
+          <strong>Programming:</strong> Java, Python, C++, JavaFX, SceneBuilder, HTML, CSS, ArkTS<br/>
+          <strong>Tools:</strong> Unity, AutoCAD, MATLAB, Arduino, DevEco Studio<br/>
           <strong>Languages:</strong> Chinese (Native), English (TOEFL 101), Spanish (Intermediate)
         </p>`,
       experience: `
@@ -97,8 +97,8 @@ const content = {
       skills: `
         <h2>技能</h2>
         <p>
-          <strong>编程语言：</strong>Java, Python, C++, JavaFX, SceneBuilder, HTML, CSS<br/>
-          <strong>工具：</strong>Unity, AutoCAD, MATLAB, Arduino<br/>
+          <strong>编程语言：</strong>Java, Python, C++, JavaFX, SceneBuilder, HTML, CSS, ArkTS<br/>
+          <strong>工具：</strong>Unity, AutoCAD, MATLAB, Arduino, DevEco Studio<br/>
           <strong>语言：</strong>中文（母语）、英文（托福 101）、西班牙语（中级）
         </p>`,
       experience: `
