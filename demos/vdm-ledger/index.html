@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Try VDM Ledger: an interactive personal finance demo with synthetic data. No account required.">
+  <meta name="color-scheme" content="light dark">
+  <title>VDM Ledger | Interactive Demo</title>
+  <link rel="icon" href="ledger-mark.png">
+  <link rel="stylesheet" href="demo.css">
+  <script src="data.js" defer></script>
+  <script src="model.js" defer></script>
+  <script src="demo.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#workspace" data-text="skip">Skip to workspace</a>
+  <aside class="sidebar">
+    <a class="brand" href="#dashboard"><img src="ledger-mark.png" alt="" width="42" height="42"><span><strong>VDM Ledger</strong><small data-text="brandSub">Interactive demo</small></span></a>
+    <nav aria-label="Demo navigation" id="demo-nav">
+      <a href="#dashboard" data-view="dashboard"><span aria-hidden="true">▦</span><span data-text="dashboard">Dashboard</span></a>
+      <a href="#transactions" data-view="transactions"><span aria-hidden="true">≡</span><span data-text="transactions">Transactions</span></a>
+      <a href="#payments" data-view="payments"><span aria-hidden="true">⇄</span><span data-text="payments">Payments</span></a>
+      <a href="#monthly" data-view="monthly"><span aria-hidden="true">▥</span><span data-text="monthly">Monthly report</span></a>
+    </nav>
+    <div class="sidebar-bottom"><p data-text="sidebarNote">Sample data. No bank connection.</p><a href="../../index.html#project-vdm-ledger" data-text="back">← Back to portfolio</a></div>
+  </aside>
+  <main>
+    <header class="topbar"><h1 id="page-title">Dashboard</h1><div class="preferences"><button id="language" type="button" aria-label="Switch to Chinese">中文</button><button id="theme" type="button" aria-label="Switch to dark theme">☾</button></div></header>
+    <div class="main-inner">
+      <section class="demo-banner" aria-labelledby="demo-label"><span class="demo-pill" id="demo-label" data-text="demoPill">DEMO / SYNTHETIC DATA</span><p data-text="demoNote">Explore a working preview with sample transactions. Edits stay in this tab and reset when you reload.</p></section>
+      <div class="workspace-toolbar"><label class="month-field"><span data-text="period">Sample period</span><select id="month" aria-label="Sample month"><option value="2026-08">August 2026</option><option value="2026-07">July 2026</option><option value="2026-06">June 2026</option></select></label><div class="toolbar-actions"><button id="export" type="button" data-text="export">Download CSV</button><button id="reset" type="button" data-text="reset">Reset demo</button></div></div>
+      <div id="workspace" tabindex="-1"></div>
+      <noscript><p>This interactive demo requires JavaScript. <a href="../../index.html#project-vdm-ledger">Return to the portfolio.</a></p></noscript>
+      <footer class="demo-footer"><span data-text="scope">Preview of dashboard, transaction editing, payments, and monthly reports. Bank syncing and authentication belong to the full application.</span><a href="https://vdm-ledger.vercel.app/dashboard" target="_blank" rel="noopener noreferrer" data-text="fullApp">Full application (owner sign-in) ↗</a></footer>
+    </div>
+  </main>
+  <dialog id="edit-dialog" aria-labelledby="edit-title"><form id="edit-form"><div class="dialog-heading"><div><p class="eyebrow" data-text="editSample">EDIT SAMPLE TRANSACTION</p><h2 id="edit-title"></h2></div><button type="button" id="close-editor" aria-label="Close editor">×</button></div><p id="edit-meta" class="muted"></p><p id="edit-explanation" class="explanation"></p><label><span data-text="category">Category</span><select id="edit-category"></select></label><label><span data-text="note">Note</span><textarea id="edit-note" rows="3" maxlength="1000"></textarea></label><p class="muted" data-text="editNote">Changes affect this demo only. Reload or reset to restore the original sample.</p><div class="dialog-actions"><button type="button" id="cancel-editor" data-text="cancel">Cancel</button><button type="submit" class="primary" data-text="save">Save changes</button></div></form></dialog>
+  <p id="status" class="toast" role="status" aria-live="polite" hidden></p>
+</body>
+</html>

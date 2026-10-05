@@ -1,270 +1,437 @@
-const content = {
-  en: {
-    nav: {
-      education:  'Education',
-      skills:     'Skills',
-      experience: 'Experience',
-      projects:   'Projects',
-      activities: 'Activities',
-      download:   'Download Resume'
-    },
-    name:    'Wei (David) Dai',
-    tagline: 'Currently a sophomore',
-    sections: {
-      education: `
-        <h2>Education</h2>
-        <div>
-          <strong>Purdue University Fort Wayne 2023/08 – 2027/05</strong>
-          <p>Major: Computer Engineering · GPA 3.65/4.0 · Dean’s List & Honors</p>
-        </div>
-        <div>
-          <strong>Wyoming Seminary Prep 2020/08 – 2023/05</strong>
-          <p>High School Diploma</p>
-        </div>`,
-      skills: `
-        <h2>Skills</h2>
-        <p>
-          <strong>Programming:</strong> Java, Python, C++, JavaFX, SceneBuilder, HTML, CSS, ArkTS<br/>
-          <strong>Tools:</strong> Unity, AutoCAD, MATLAB, Arduino, DevEco Studio<br/>
-          <strong>Languages:</strong> Chinese (Native), English (TOEFL 101), Spanish (Intermediate)
-        </p>`,
-      experience: `
-        <h2>Internships & Work Experience</h2>
-        <div>
-          <strong>Utopilot Internship – SAIC Summer 2024</strong>
-          <p>Worked on perception for autonomous vehicles · Point-cloud & OCC visual conversion.</p>
-        </div>
-        <div>
-          <strong>IT Helpdesk – Purdue Fort Wayne 2024-2025</strong>
-          <p>Front-line tech support · Managed loaner laptops · Troubleshooting & escalation.</p>
-        </div>`,
-      projects: `
-        <h2>Projects</h2>
-        <div>
-          <strong>Black Jack Simulator</strong>
-          <p>A JavaFX-based Blackjack game where players compete against a computerized dealer to achieve a hand value closest to 21. The project showcases event-driven programming, GUI interactions, class inheritance, UML diagramming, structured game logic, and custom styling features.
-.</p>
-        </div>
-        <div>
-          <strong>Bank Simulator</strong>
-          <p>a JavaFX GUI application for calculating monthly car loan payments based on price, taxes, and financing inputs, alongside a console-based banking system supporting account operations like deposits, withdrawals, and loan applications. The project covers GUI design, event-driven programming, financial formulas, decision structures, loops, ArrayLists, file output, and custom styling.</p>
-        </div>
-        <div>
-          <strong>MATLAB–Arduino Embedded Control Panel</strong>
-          <p>A MATLAB App Designer project that connects to a PEEB via Arduino Uno to control and monitor components like LEDs, servos, buzzers, and LDRs. Features GUI interaction, timer-based polling, and real-time data visualization.</p>
-        </div>
-        <div>
-          <strong>HarmonyOS To-Do List App</strong>
-          <p>A lightweight to-do list app built with ArkTS and DevEco Studio for HarmonyOS. Features component-based UI, @State-driven state management, and conditional rendering for dynamic task interactions. Users can toggle tasks as complete or incomplete with responsive visual feedback.</p>
-        </div>
-        <div>
-          <strong>Personal Portfolio Website</strong>
-          <p>GitHub Pages portfolio showcasing projects, resume, and contact info, implemented with HTML, CSS, and JavaScript. Features theme switching, multi-language support, and dynamic background animations for a modern presentation.</p>
-        </div>`,
-      activities: `
-        <h2>Activities & Competitions</h2>
-        <ul>
-          <li>IEEE Xtreme 2023–2024: Team leader; placed Top 50.</li>
-          <li>National Cyber League 2023–2024</li>
-          <li>Global Game Jam 2024</li>
-          <li>Community Service 2018–2021</li>
-          <li>Varsity Cross Country & Swim 2021–2023</li>
-        </ul>`
-    }
-  },
-  zh: {
-    nav: {
-      education:  '教育',
-      skills:     '技能',
-      experience: '经历',
-      projects:   '项目',
-      activities: '活动',
-      download:   '下载简历'
-    },
-    name:    '戴维',
-    tagline: '大二在读中',
-    sections: {
-      education: `
-        <h2>教育</h2>
-        <div>
-          <strong>普渡大学韦恩堡分校 2023年8月 – 2027年5月</strong>
-          <p>专业：计算机工程  · GPA 3.65/4.0 · 荣誉名单</p>
-        </div>
-        <div>
-          <strong>怀俄明中学 2020年8月 – 2023年5月</strong>
-          <p>高中毕业</p>
-        </div>`,
-      skills: `
-        <h2>技能</h2>
-        <p>
-          <strong>编程语言：</strong>Java, Python, C++, JavaFX, SceneBuilder, HTML, CSS, ArkTS<br/>
-          <strong>工具：</strong>Unity, AutoCAD, MATLAB, Arduino, DevEco Studio<br/>
-          <strong>语言：</strong>中文（母语）、英文（托福 101）、西班牙语（中级）
-        </p>`,
-      experience: `
-        <h2>实习与工作经历</h2>
-        <div>
-          <strong>自动驾驶实习 – 上汽集团 2024年夏</strong>
-          <p>参与点云与 OCC 图像转换的自动驾驶感知项目。</p>
-        </div>
-        <div>
-          <strong>IT技术支持 – 普渡大学韦恩堡分校 2024–2025</strong>
-          <p>一线技术支持 · 笔记本管理 · 故障排查与升级。</p>
-        </div>`,
-      projects: `
-        <h2>项目</h2>
-        <div>
-          <strong>二十一点游戏模拟器</strong>
-          <p>一个基于 JavaFX 的二十一点纸牌游戏，玩家与计算机发牌员对战，目标是使手牌总点数尽可能接近 21。项目展示了事件驱动编程、图形界面交互、类继承结构、UML 类图设计、游戏逻辑实现和自定义界面样式。</p>
-        </div>
-        <div>
-          <strong>JAVA简易银行系统</strong>
-          <p>该项目包含一个基于 JavaFX 的图形界面贷款计算器，可根据车辆价格、税率及融资信息计算月供，以及一个控制台银行系统，支持余额查询、存取款、贷款申请等功能。项目涵盖图形界面设计、事件驱动编程、金融计算、决策结构、循环、数组列表、文件输出与界面样式定制。</p>
-        </div>
-        <div>
-          <strong>MATLAB–Arduino 嵌入式控制面板</strong>
-          <p>基于 MATLAB App Designer 的项目，通过 Arduino Uno 连接 PEEB，实现对 LED、舵机、蜂鸣器和 LDR 的控制与监测。支持图形界面交互、定时轮询和实时数据可视化。</p>
-        </div>
-        <div>
-          <strong>HarmonyOS 待办事项应用</strong>
-          <p>使用 ArkTS 和 DevEco Studio 开发的轻量级待办事项应用，适用于 HarmonyOS。支持基于组件的 UI 架构、@State 状态管理以及任务交互的条件渲染，用户可切换任务完成状态，并获得直观的视觉反馈。</p>
-        </div>
-        <div>
-          <strong>个人作品集网站</strong>
-          <p>基于 GitHub Pages 的个人网站，使用 HTML、CSS 和 JS，支持主题切换、多语言和动态背景动画。</p>
-        </div>`,
-      activities: `
-        <h2>活动与竞赛</h2>
-        <ul>
-          <li>IEEE Xtreme 编程竞赛（2023–2024）</li>
-          <li>全国网络联盟赛（2023–2024）</li>
-          <li>全球游戏创作节（2024）</li>
-          <li>社区志愿服务（2018–2021）</li>
-          <li>越野跑与游泳校队（2021–2023）</li>
-        </ul>`
-    }
-  }
-};
+'use strict';
 
-function setLanguage(lang) {
-  document.getElementById('name').textContent    = content[lang].name;
-  document.getElementById('tagline').textContent = content[lang].tagline;
-  document.querySelectorAll('.nav-link[data-section]').forEach(el => {
-    el.textContent = content[lang].nav[el.dataset.section];
+const content = window.PORTFOLIO_CONTENT;
+const config = window.PORTFOLIO_CONFIG;
+let language = 'en';
+let theme = 'day';
+let gallery = null;
+let backgroundFrame = null;
+let startBackground = null;
+let revealObserver = null;
+const entranceAnimations = new Set();
+const revealedElements = new WeakSet();
+const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
+let tiltTarget = null;
+let tiltFrame = null;
+const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+let animationPreference = recalled('animation', 'auto');
+const petal = new Image();
+petal.src = 'petal.png';
+petal.addEventListener('load', () => { if (theme === 'blush' && document.readyState !== 'loading') initBackground(); });
+
+function escapeHTML(value) {
+  return String(value ?? '').replace(/[&<>"']/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[character]);
+}
+
+function safeURL(value) {
+  if (typeof value !== 'string' || !value.trim()) return '';
+  try {
+    const url = new URL(value.trim(), document.baseURI);
+    return ['https:', 'http:', 'file:'].includes(url.protocol) && !url.username && !url.password ? value.trim() : '';
+  } catch { return ''; }
+}
+
+function localized(value, fallback = '') {
+  if (typeof value === 'string') return value;
+  return value?.[language] || value?.en || fallback;
+}
+
+function getMedia(id) {
+  return (config.projects[id]?.media || []).filter(item => ['image', 'video'].includes(item.type) && safeURL(item.src));
+}
+
+function list(items, className = '') {
+  return `<ul${className ? ` class="${escapeHTML(className)}"` : ''}>${items.map(item => `<li>${escapeHTML(item)}</li>`).join('')}</ul>`;
+}
+
+function sectionHeading(id, label, title, intro = '') {
+  return `<div class="section-heading"><p class="section-label">${escapeHTML(label)}</p><h2 id="${id}-title">${escapeHTML(title)}</h2>${intro ? `<p class="section-intro">${escapeHTML(intro)}</p>` : ''}</div>`;
+}
+
+function projectCover(project, index) {
+  const media = getMedia(project.id);
+  const ui = content[language].ui;
+  if (media.length) {
+    const first = media[0];
+    const alt = localized(first.alt, `${project.name} — ${ui[first.type]}`);
+    const preview = first.type === 'image'
+      ? `<img src="${escapeHTML(safeURL(first.src))}" alt="${escapeHTML(alt)}" loading="lazy" decoding="async">`
+      : `<video src="${escapeHTML(safeURL(first.src))}" preload="metadata" muted playsinline aria-label="${escapeHTML(alt)}"></video>`;
+    return `<div class="project-cover has-media"><button class="media-open" type="button" data-gallery="${project.id}" aria-label="${escapeHTML(`${ui.gallery}: ${project.name}`)}">${preview}<span class="media-badge">${escapeHTML(ui.gallery)} ↗</span></button></div>`;
+  }
+  const initials = { 'ai-workspace': 'AI / WS', 'vdm-ledger': 'VDM / L', 'smart-locker': 'PIN / IO' };
+  return `<div class="project-cover" aria-hidden="true"><div class="cover-top"><span>PROJECT / 0${index + 1}</span><span>↗</span></div><span class="cover-monogram">${initials[project.id]}</span><div class="cover-flow">${project.visual.map(word => `<span>${escapeHTML(word)}</span>`).join('')}</div></div>`;
+}
+
+function renderSections() {
+  const data = content[language];
+  const ui = data.ui;
+  document.getElementById('experience').innerHTML = sectionHeading('experience', ui.experienceLabel, ui.experienceTitle, ui.experienceIntro) + `<div class="experience-list">${data.experience.map(entry => `
+    <article class="experience-entry${entry.featured ? ' featured' : ''}"><div class="entry-meta"><p>${escapeHTML(entry.date)}</p><p>${escapeHTML(entry.location)}</p></div><div><h3>${escapeHTML(entry.company)}</h3><p class="role">${escapeHTML(entry.role)}</p>${list(entry.bullets)}${list(entry.tags, 'tags')}</div></article>`).join('')}</div>`;
+
+  document.getElementById('projects').innerHTML = sectionHeading('projects', ui.projectsLabel, ui.projectsTitle, ui.projectsIntro) + `<div class="project-grid">${data.projects.map((project, index) => {
+    const links = config.projects[project.id] || {};
+    const actions = ['github', 'demo'].map(key => {
+      const href = safeURL(links[key]);
+      return href ? `<a href="${escapeHTML(href)}" target="_blank" rel="noopener noreferrer">${escapeHTML(ui[key])}</a>` : '';
+    }).join('') + (getMedia(project.id).length ? `<button type="button" data-gallery="${project.id}">${escapeHTML(ui.gallery)}</button>` : '');
+    return `<article class="project-card" id="project-${project.id}">${projectCover(project, index)}<div class="project-copy"><p class="project-category">${escapeHTML(project.category)}</p><h3>${escapeHTML(project.name)}</h3><p class="project-subtitle">${escapeHTML(project.subtitle)}</p><p class="project-date">${escapeHTML(project.date)}</p><p class="project-description">${escapeHTML(project.description)}</p>${list(project.tags, 'tags')}${list(project.bullets, 'project-highlights')}<div class="project-actions">${actions}</div></div></article>`;
+  }).join('')}</div>`;
+
+  const groups = [
+    [ui.softwareSkills, ['C++', 'C', 'Python', 'Java', 'JavaScript / TypeScript', 'SQL']],
+    [ui.systemsSkills, ['Qt', 'Git', 'Docker', 'CMake', 'Arduino']],
+    [ui.webSkills, ['Next.js', 'Supabase', 'PostgreSQL', 'GitHub Actions', 'Vercel']]
+  ];
+  document.getElementById('skills').innerHTML = sectionHeading('skills', ui.skillsLabel, ui.skillsTitle) + `<div class="skills-grid">${groups.map(([title, tools]) => `<div class="skill-group"><h3>${escapeHTML(title)}</h3>${list(tools, 'tags')}</div>`).join('')}</div><div class="spoken-languages"><strong>${escapeHTML(ui.spokenLanguages)}</strong>${data.spoken.map(item => `<span>${escapeHTML(item)}</span>`).join('')}</div>`;
+
+  document.getElementById('education').innerHTML = sectionHeading('education', ui.educationLabel, ui.educationTitle) + `<div class="education-grid">${data.education.map(entry => `<article class="education-card"><div class="education-top"><span>${escapeHTML(entry.date)}</span>${entry.current ? `<span class="current-badge">${escapeHTML(ui.current)}</span>` : ''}</div><h3>${escapeHTML(entry.school)}</h3>${entry.fullName ? `<p class="school-full-name">${escapeHTML(entry.fullName)}</p>` : ''}<p class="degree">${escapeHTML(entry.degree)}</p><p class="education-location">${escapeHTML(entry.location)}</p>${entry.current ? `<p class="education-location">${escapeHTML(ui.expected)}</p>` : ''}${entry.gpa ? `<p class="role">GPA ${escapeHTML(entry.gpa)}</p>` : ''}<div class="education-detail"><strong>${escapeHTML(entry.courses ? ui.coursework : ui.honors)}</strong><p>${(entry.courses || entry.honors).map(escapeHTML).join(' · ')}</p></div></article>`).join('')}</div>`;
+
+  const leadership = data.leadership;
+  document.getElementById('activities').innerHTML = sectionHeading('activities', ui.leadershipLabel, ui.leadershipTitle) + `<article class="leadership-card"><div><h3>${escapeHTML(leadership.name)}</h3><p class="role">${escapeHTML(leadership.role)} · ${escapeHTML(leadership.date)}</p><p>${escapeHTML(leadership.description)}</p></div><div class="competition-results"><div><strong>#1</strong><span>${escapeHTML(leadership.localLabel)}</span></div><div><strong>#51</strong><span>${escapeHTML(leadership.nationalLabel)}</span></div></div></article>`;
+}
+
+function remember(key, value) {
+  try { localStorage.setItem(`wd-portfolio-${key}`, value); } catch { /* Preferences also work without storage. */ }
+}
+
+function recalled(key, fallback) {
+  try { return localStorage.getItem(`wd-portfolio-${key}`) || fallback; } catch { return fallback; }
+}
+
+function setLanguage(nextLanguage) {
+  language = Object.hasOwn(content, nextLanguage) ? nextLanguage : 'en';
+  const ui = content[language].ui;
+  document.documentElement.lang = language === 'zh' ? 'zh-CN' : 'en';
+  document.querySelectorAll('[data-i18n]').forEach(element => { element.textContent = ui[element.dataset.i18n]; });
+  document.getElementById('about-copy').textContent = content[language].about;
+  document.getElementById('footer-name').textContent = language === 'zh' ? '戴维 / Wei (David) Dai' : 'Wei (David) Dai';
+  document.querySelectorAll('[data-lang]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.lang === language)));
+  document.querySelector('nav').setAttribute('aria-label', ui.navigationLabel);
+  document.querySelector('.language-switcher').setAttribute('aria-label', ui.languageLabel);
+  document.querySelector('.theme-switcher').setAttribute('aria-label', ui.themeLabel);
+  document.querySelector('.animation-switcher').setAttribute('aria-label', ui.animationLabel);
+  updateAnimationControl();
+  document.querySelector('.focus-panel').setAttribute('aria-label', ui.focusAria);
+  document.querySelectorAll('[data-theme]').forEach(button => {
+    const key = `theme${button.dataset.theme[0].toUpperCase()}${button.dataset.theme.slice(1)}`;
+    button.setAttribute('aria-label', ui[key]); button.title = ui[key];
   });
-  for (let sec in content[lang].sections) {
-    document.getElementById(sec).innerHTML = content[lang].sections[sec];
-  }
-  document.getElementById('footer-name').textContent = content[lang].name;
-  const e = document.getElementById('footer-email');
-  e.textContent = 'david0322v@gmail.com';
-  e.href = 'mailto:david0322v@gmail.com';
+  document.querySelector('meta[name="description"]').content = language === 'zh'
+    ? '戴维（Wei / David Dai）— 弗吉尼亚理工大学计算机工程学生。C++ 软件、嵌入式系统、全栈应用与 AI 感知项目。'
+    : 'Wei (David) Dai — Computer Engineering student at Virginia Tech. C++ software, embedded systems, full-stack applications, and AI perception.';
+  renderSections();
+  syncPageEffects();
+  const resume = document.getElementById('download');
+  const resumeURL = safeURL(config.resumeHref);
+  resume.hidden = !resumeURL;
+  if (resumeURL) resume.href = resumeURL;
+  remember('language', language);
 }
 
-function setTheme(theme) {
-  document.body.className = 'theme-' + theme;
-  initBackground(theme);
+function setTheme(nextTheme) {
+  theme = ['day', 'night', 'blush'].includes(nextTheme) ? nextTheme : 'day';
+  document.body.classList.remove('theme-day', 'theme-night', 'theme-blush');
+  document.body.classList.add(`theme-${theme}`);
+  document.querySelectorAll('[data-theme]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.theme === theme)));
+  remember('theme', theme);
+  initBackground();
 }
 
-function initBackground(theme) {
-  const c = document.getElementById('bgcanvas');
-  const ctx = c.getContext('2d');
-  cancelAnimationFrame(c._anim);
-  c.width = innerWidth; c.height = innerHeight;
+function animationEnabled() {
+  return animationPreference === 'on' || (animationPreference !== 'off' && !motionPreference.matches);
+}
 
-  let items = [], count;
-  if (theme==='night') {
-    count = 200;
-    for (let i=0;i<count;i++){
-      items.push({
-        x:Math.random()*c.width,
-        y:Math.random()*c.height,
-        size:Math.random()*2+1,
-        blink:Math.random()*0.05+0.02,
-        alpha:Math.random()
-      });
-    }
-  } else if (theme==='blush') {
-    count = 100;
-    for (let i=0;i<count;i++){
-      items.push({
-        x:Math.random()*c.width,
-        y:Math.random()*c.height,
-        img:new Image(),
-        vx:Math.random()*0.5-0.25,
-        vy:Math.random()*1+0.5,
-        angle:Math.random()*2*Math.PI,
-        rot:Math.random()*0.02-0.01,
-        size:20+Math.random()*20
-      });
-      items[i].img.src = 'petal.png';
-    }
-  } else {
-    count = 80;
-    for (let i=0;i<count;i++){
-      items.push({
-        x:Math.random()*c.width,
-        y:Math.random()*c.height,
-        r:10+Math.random()*40,
-        vx:(Math.random()-0.5)*0.5,
-        vy:(Math.random()-0.5)*0.5
-      });
-    }
+function updateAnimationControl() {
+  const button = document.getElementById('toggle-animation');
+  const enabled = animationEnabled();
+  const label = content[language].ui[enabled ? 'pauseAnimation' : 'playAnimation'];
+  button.textContent = enabled ? 'Ⅱ' : '▶';
+  button.setAttribute('aria-label', label);
+  button.setAttribute('aria-pressed', String(enabled));
+  button.title = label;
+}
+
+function toggleAnimation() {
+  animationPreference = animationEnabled() ? 'off' : 'on';
+  remember('animation', animationPreference);
+  updateAnimationControl();
+  syncBackgroundAnimation();
+  syncPageEffects();
+}
+
+function effectsEnabled() {
+  return animationEnabled() && !motionPreference.matches;
+}
+
+function animateEntrance(element, delay = 0) {
+  if (revealedElements.has(element) || !effectsEnabled() || !element.animate) return;
+  revealedElements.add(element);
+  const animation = element.animate([
+    { opacity: 0, transform: 'translateY(24px)' },
+    { opacity: 1, transform: 'translateY(0)' }
+  ], { duration: 700, delay, easing: 'cubic-bezier(.2,.7,.2,1)', fill: 'backwards' });
+  entranceAnimations.add(animation);
+  animation.finished.catch(() => {}).finally(() => entranceAnimations.delete(animation));
+}
+
+function clearTilt() {
+  cancelAnimationFrame(tiltFrame);
+  tiltFrame = null;
+  if (tiltTarget) {
+    ['--tilt-x', '--tilt-y', '--glow-x', '--glow-y'].forEach(name => tiltTarget.style.removeProperty(name));
+    tiltTarget.classList.remove('pointer-active');
   }
+  tiltTarget = null;
+}
 
-  function draw() {
-    ctx.clearRect(0,0,c.width,c.height);
-    if (theme==='night') {
-      ctx.fillStyle='#fff';
-      items.forEach(s=>{
-        s.alpha+=s.blink*(Math.random()>0.5?1:-1);
-        s.alpha=Math.max(0,Math.min(1,s.alpha));
-        ctx.globalAlpha=s.alpha;
-        ctx.fillRect(s.x,s.y,s.size,s.size);
+function syncPageEffects() {
+  clearTilt();
+  const enabled = effectsEnabled();
+  document.body.classList.toggle('effects-enabled', enabled);
+  document.documentElement.classList.toggle('motion-paused', !enabled);
+  revealObserver?.disconnect();
+  if (!enabled) {
+    entranceAnimations.forEach(animation => animation.cancel());
+    entranceAnimations.clear();
+    clearTilt();
+    return;
+  }
+  const hero = document.querySelectorAll('.hero .eyebrow, .hero h1, .hero-tagline, .hero-location, .hero-actions, .focus-panel');
+  hero.forEach((element, index) => animateEntrance(element, index * 70));
+  const sections = document.querySelectorAll('.about-section, .section-heading, .experience-entry, .project-card, .skill-group, .education-card, .leadership-card, .contact-section');
+  if (!('IntersectionObserver' in window)) return;
+  revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      animateEntrance(entry.target);
+      revealObserver.unobserve(entry.target);
+    });
+  }, { threshold: .08, rootMargin: '0px 0px -32px 0px' });
+  sections.forEach(element => {
+    // Content is visible by default, including without JavaScript or motion.
+    if (element.getBoundingClientRect().bottom < 0) revealedElements.add(element);
+    if (!revealedElements.has(element)) revealObserver.observe(element);
+  });
+}
+
+function initPageEffects() {
+  const progress = document.createElement('div');
+  progress.className = 'reading-progress';
+  progress.setAttribute('aria-hidden', 'true');
+  document.body.append(progress);
+  const links = [...document.querySelectorAll('nav a[href^="#"]')];
+  let scrollFrame = null;
+  function updateScroll() {
+    scrollFrame = null;
+    const distance = document.documentElement.scrollHeight - window.innerHeight;
+    progress.style.setProperty('--progress', distance > 0 ? String(Math.min(1, Math.max(0, window.scrollY / distance))) : '0');
+    const headerBottom = document.querySelector('.site-header').getBoundingClientRect().bottom;
+    let current = null;
+    links.forEach(link => {
+      const section = document.querySelector(link.getAttribute('href'));
+      if (section && section.getBoundingClientRect().top <= headerBottom + 100) current = link;
+    });
+    links.forEach(link => {
+      if (link === current) link.setAttribute('aria-current', 'location');
+      else link.removeAttribute('aria-current');
+    });
+  }
+  function scheduleScroll() {
+    if (scrollFrame === null) scrollFrame = requestAnimationFrame(updateScroll);
+  }
+  window.addEventListener('scroll', scheduleScroll, { passive: true });
+  window.addEventListener('resize', scheduleScroll, { passive: true });
+  if ('ResizeObserver' in window) new ResizeObserver(scheduleScroll).observe(document.querySelector('main'));
+  updateScroll();
+  document.querySelector('main').addEventListener('pointermove', event => {
+    if (!effectsEnabled() || !finePointer.matches || event.pointerType === 'touch') return;
+    const card = event.target.closest('.project-card, .focus-panel');
+    if (!card) { clearTilt(); return; }
+    if (tiltTarget !== card) { clearTilt(); tiltTarget = card; }
+    const bounds = card.getBoundingClientRect();
+    const x = Math.min(1, Math.max(0, (event.clientX - bounds.left) / bounds.width));
+    const y = Math.min(1, Math.max(0, (event.clientY - bounds.top) / bounds.height));
+    cancelAnimationFrame(tiltFrame);
+    tiltFrame = requestAnimationFrame(() => {
+      card.classList.add('pointer-active');
+      card.style.setProperty('--glow-x', `${x * 100}%`);
+      card.style.setProperty('--glow-y', `${y * 100}%`);
+      card.style.setProperty('--tilt-x', `${(0.5 - y) * 5}deg`);
+      card.style.setProperty('--tilt-y', `${(x - 0.5) * 5}deg`);
+      tiltFrame = null;
+    });
+  }, { passive: true });
+  document.querySelector('main').addEventListener('pointerleave', clearTilt);
+  window.addEventListener('blur', clearTilt);
+  finePointer.addEventListener('change', clearTilt);
+  syncPageEffects();
+}
+
+function syncBackgroundAnimation() {
+  cancelAnimationFrame(backgroundFrame);
+  backgroundFrame = null;
+  if (animationEnabled() && !document.hidden && startBackground) startBackground();
+}
+
+function initBackground() {
+  cancelAnimationFrame(backgroundFrame);
+  backgroundFrame = null;
+  startBackground = null;
+  const canvas = document.getElementById('bgcanvas');
+  const context = canvas.getContext('2d');
+  if (!context) return;
+  const width = window.innerWidth;
+  const height = window.innerHeight;
+  const ratio = Math.min(window.devicePixelRatio || 1, 2);
+  canvas.width = width * ratio; canvas.height = height * ratio;
+  context.setTransform(ratio, 0, 0, ratio, 0, 0);
+  // Restore the original site's particle types, counts, sizes, and velocities.
+  const count = theme === 'night' ? 200 : theme === 'blush' ? 100 : 80;
+  const items = Array.from({ length: count }, () => {
+    const position = { x: Math.random() * width, y: Math.random() * height };
+    if (theme === 'night') return { ...position, size: 1 + Math.random() * 2, blink: .02 + Math.random() * .05, alpha: Math.random() };
+    if (theme === 'blush') return { ...position, size: 20 + Math.random() * 20, vx: Math.random() * .5 - .25, vy: Math.random() + .5, angle: Math.random() * Math.PI * 2, rotation: Math.random() * .02 - .01 };
+    return { ...position, radius: 10 + Math.random() * 40, vx: (Math.random() - .5) * .5, vy: (Math.random() - .5) * .5 };
+  });
+
+  function paint(movement) {
+    context.clearRect(0, 0, width, height);
+    if (theme === 'night') {
+      context.fillStyle = '#fff';
+      items.forEach(star => {
+        star.alpha = Math.max(0, Math.min(1, star.alpha + star.blink * (Math.random() > .5 ? 1 : -1) * movement));
+        context.globalAlpha = star.alpha;
+        context.fillRect(star.x, star.y, star.size, star.size);
       });
-      ctx.globalAlpha=1;
-    }
-    else if(theme==='blush'){
-      items.forEach(p=>{
-        ctx.save();
-        ctx.globalAlpha=0.8;
-        ctx.translate(p.x,p.y);
-        ctx.rotate(p.angle);
-        ctx.drawImage(p.img,-p.size/2,-p.size/2,p.size,p.size);
-        ctx.restore();
-        p.x+=p.vx; p.y+=p.vy; p.angle+=p.rot;
-        if(p.y>c.height) p.y=-p.size;
-        if(p.x>c.width) p.x=-p.size;
-        if(p.x<-p.size) p.x=c.width+p.size;
+    } else if (theme === 'blush') {
+      items.forEach(flower => {
+        context.save();
+        context.globalAlpha = .8;
+        context.translate(flower.x, flower.y); context.rotate(flower.angle);
+        if (petal.complete && petal.naturalWidth > 0) {
+          context.drawImage(petal, -flower.size / 2, -flower.size / 2, flower.size, flower.size);
+        } else {
+          context.fillStyle = '#e78da7'; context.beginPath();
+          context.ellipse(0, 0, flower.size / 3, flower.size / 6, 0, 0, Math.PI * 2); context.fill();
+        }
+        context.restore();
+        flower.x += flower.vx * movement; flower.y += flower.vy * movement; flower.angle += flower.rotation * movement;
+        if (flower.y > height) flower.y = -flower.size;
+        if (flower.x > width + flower.size) flower.x = -flower.size;
+        if (flower.x < -flower.size) flower.x = width + flower.size;
       });
     } else {
-      ctx.fillStyle='rgba(100,149,237,0.3)';
-      items.forEach(b=>{
-        ctx.beginPath();
-        ctx.arc(b.x,b.y,b.r,0,2*Math.PI);
-        ctx.fill();
-        b.x+=b.vx; b.y+=b.vy;
-        if(b.x-b.r>c.width)b.x=-b.r;
-        if(b.x+b.r<0)b.x=c.width+b.r;
-        if(b.y-b.r>c.height)b.y=-b.r;
-        if(b.y+b.r<0)b.y=c.height+b.r;
+      context.fillStyle = 'rgba(100, 149, 237, 0.3)';
+      items.forEach(bubble => {
+        context.beginPath(); context.arc(bubble.x, bubble.y, bubble.radius, 0, Math.PI * 2); context.fill();
+        bubble.x += bubble.vx * movement; bubble.y += bubble.vy * movement;
+        if (bubble.x - bubble.radius > width) bubble.x = -bubble.radius;
+        if (bubble.x + bubble.radius < 0) bubble.x = width + bubble.radius;
+        if (bubble.y - bubble.radius > height) bubble.y = -bubble.radius;
+        if (bubble.y + bubble.radius < 0) bubble.y = height + bubble.radius;
       });
     }
-    c._anim = requestAnimationFrame(draw);
+    context.globalAlpha = 1;
   }
-  draw();
+
+  // A still background remains visible when motion is disabled.
+  paint(0);
+  let previousTime = 0;
+  function draw(time) {
+    if (document.hidden || !animationEnabled()) { backgroundFrame = null; return; }
+    const movement = previousTime ? Math.min((time - previousTime) / 16.67, 2) : 1;
+    previousTime = time;
+    paint(movement);
+    backgroundFrame = requestAnimationFrame(draw);
+  }
+  startBackground = () => {
+    previousTime = 0;
+    backgroundFrame = requestAnimationFrame(draw);
+  };
+  syncBackgroundAnimation();
 }
 
-window.addEventListener('DOMContentLoaded',()=>{
-  setLanguage('en');
-  setTheme('day');
-  ScrollReveal().reveal('.reveal',{distance:'40px',duration:800,easing:'ease-in-out',origin:'bottom',interval:200});
-  document.querySelectorAll('.theme-switcher button')
-    .forEach(b=>b.addEventListener('click',()=>setTheme(b.dataset.theme)));
-  document.querySelectorAll('.language-switcher button')
-    .forEach(b=>b.addEventListener('click',()=>setLanguage(b.dataset.lang)));
-  window.addEventListener('resize',()=>{
-    const t=document.body.className.split('-')[1];
-    initBackground(t);
+function renderGallery() {
+  if (!gallery) return;
+  const { media, index, name } = gallery;
+  const item = media[index];
+  const ui = content[language].ui;
+  const container = document.getElementById('media-content');
+  container.replaceChildren();
+  document.getElementById('media-title').textContent = name;
+  const element = document.createElement(item.type === 'video' ? 'video' : 'img');
+  element.src = safeURL(item.src);
+  if (item.type === 'video') {
+    element.controls = true; element.playsInline = true; element.preload = 'metadata';
+    element.textContent = ui.videoUnsupported;
+    element.setAttribute('aria-label', localized(item.alt, `${name} — ${ui.video}`));
+  } else { element.alt = localized(item.alt, `${name} — ${ui.image}`); }
+  element.addEventListener('error', () => { if (!element.isConnected) return; const error = document.createElement('p'); error.setAttribute('role', 'status'); error.textContent = ui.mediaUnavailable; container.replaceChildren(error); }, { once: true });
+  container.append(element);
+  const caption = localized(item.caption);
+  if (caption) { const paragraph = document.createElement('p'); paragraph.textContent = caption; container.append(paragraph); }
+  document.getElementById('media-counter').textContent = `${index + 1} / ${media.length}`;
+  document.getElementById('previous-media').disabled = index === 0;
+  document.getElementById('next-media').disabled = index === media.length - 1;
+}
+
+function openGallery(id) {
+  const project = content[language].projects.find(item => item.id === id);
+  const media = getMedia(id);
+  if (!project || !media.length) return;
+  gallery = { media, index: 0, name: project.name };
+  renderGallery();
+  document.getElementById('media-dialog').showModal();
+}
+
+function moveGallery(direction) {
+  if (!gallery) return;
+  const nextIndex = Math.max(0, Math.min(gallery.media.length - 1, gallery.index + direction));
+  if (nextIndex === gallery.index) return;
+  gallery.index = nextIndex;
+  renderGallery();
+}
+
+function closeGallery() {
+  document.getElementById('media-content').replaceChildren();
+  gallery = null;
+  document.getElementById('media-dialog').close();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  setLanguage(recalled('language', 'en'));
+  setTheme(recalled('theme', 'day'));
+  initPageEffects();
+  document.getElementById('year').textContent = String(new Date().getFullYear());
+  document.querySelectorAll('[data-lang]').forEach(button => button.addEventListener('click', () => setLanguage(button.dataset.lang)));
+  document.querySelectorAll('[data-theme]').forEach(button => button.addEventListener('click', () => setTheme(button.dataset.theme)));
+  document.getElementById('toggle-animation').addEventListener('click', toggleAnimation);
+  document.getElementById('projects').addEventListener('click', event => {
+    const trigger = event.target.closest('[data-gallery]');
+    if (trigger) openGallery(trigger.dataset.gallery);
   });
+  const dialog = document.getElementById('media-dialog');
+  document.getElementById('close-media').addEventListener('click', closeGallery);
+  document.getElementById('previous-media').addEventListener('click', () => moveGallery(-1));
+  document.getElementById('next-media').addEventListener('click', () => moveGallery(1));
+  dialog.addEventListener('close', () => { document.getElementById('media-content').replaceChildren(); gallery = null; });
+  dialog.addEventListener('cancel', event => { event.preventDefault(); closeGallery(); });
+  dialog.addEventListener('click', event => {
+    const rect = dialog.getBoundingClientRect();
+    if (event.target === dialog && (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom)) closeGallery();
+  });
+  dialog.addEventListener('keydown', event => {
+    if (event.target.closest('video')) return;
+    if (event.key === 'ArrowRight') { event.preventDefault(); moveGallery(1); }
+    if (event.key === 'ArrowLeft') { event.preventDefault(); moveGallery(-1); }
+  });
+  let resizeTimer;
+  window.addEventListener('resize', () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(initBackground, 120); });
+  document.addEventListener('visibilitychange', () => {
+    syncBackgroundAnimation();
+    document.body.classList.toggle('page-hidden', document.hidden);
+    if (document.hidden) clearTilt();
+  });
+  motionPreference.addEventListener('change', () => { updateAnimationControl(); syncBackgroundAnimation(); syncPageEffects(); });
 });
